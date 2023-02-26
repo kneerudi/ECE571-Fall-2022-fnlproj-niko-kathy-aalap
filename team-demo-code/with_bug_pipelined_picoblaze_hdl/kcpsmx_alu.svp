@@ -1,0 +1,116 @@
+/*
+    Copyright (c) 2004 Pablo Bleyer Kocik.
+
+    Modified for EE573 Fall 2005 by John Lynch, OGI/OHSU
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+
+    3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+    EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+    BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+    IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+    POSSIBILITY OF SUCH DAMAGE.
+
+    Behavioral KCPSMX arithmetic logic unit.
+	
+	Acknowledgment:  SystemVerilog version created and tested by SethR, MilesS, 
+	ShubhankaSPM, and Supraj Vastrad for ECE 571 Winter 2020 final project
+*/
+
+import kcpsmx3_inc::*;
+
+module kcpsmx_alu(
+    operation,
+    shift_operation, shift_direction, shift_constant,
+    result, operand_a, operand_b, carry_in,
+    zero_out, carry_out
+);
+`pragma protect begin_protected
+`pragma protect version = 1
+`pragma protect encrypt_agent = "QuestaSim" , encrypt_agent_info = "2019.2_1"
+`pragma protect key_keyowner = "Mentor Graphics Corporation" , key_keyname = "MGC-VERIF-SIM-RSA-2"
+`pragma protect key_method = "rsa"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 256 )
+`pragma protect key_block
+FklcsuGCC7bxoKoEMhrqjJPNbIeUgp+vtcK8Mbsd4MNiEp+PpRrnjEct3Sl3H6w8
+oNrD7cfcxiJDXJkVxSbK81RaxinAAAnrKrTYfPmVZlgnfUz4HQRH5MeRUlTjhgUn
+ay7RXMMxIYZn6NtW3jKG67W4xc31aDwXdSIBByg2gixSBvamzrJTDMqdSawIbB5q
+SH3WaSJIEE7sZwqe/Bf+FdHh3+JeBVR6HcWumIool5AJCyDn/hwOBk77ju6K+ofe
+0z+ZbH3/F0GpNJ8GLuy8gVmRqWmZHW/nw31mhh5Uz/6ATBD7zP4XpdJPknhX/ORi
+1+ST0HaD7DtqUNVn6gbG8w==
+`pragma protect data_method = "aes128-cbc"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 2608 )
+`pragma protect data_block
+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
+CBzRe8OxECtXFdiAHzVz9Q==
+`pragma protect end_protected
+endmodule

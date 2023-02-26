@@ -1,0 +1,42 @@
+/*
+    Block RAM module that loads from memory file
+
+    Modified by Miles SImpson (mil32@pdx.edu) March 8, 2020
+    Updated to SystemVerilog and using new kcpsmx3_inc package
+	
+	Acknowledgment:  Created and tested by SethR, MilesS, ShubhankaSPM, and Supraj Vastrad
+	for ECE 571 Winter 2020 final project
+*/
+import kcpsmx3_inc::*;
+
+module blockram(
+    clk, rst,
+    en, we, ad, din, dout
+);
+`pragma protect begin_protected
+`pragma protect version = 1
+`pragma protect encrypt_agent = "QuestaSim" , encrypt_agent_info = "2019.2_1"
+`pragma protect key_keyowner = "Mentor Graphics Corporation" , key_keyname = "MGC-VERIF-SIM-RSA-2"
+`pragma protect key_method = "rsa"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 256 )
+`pragma protect key_block
+WVYXh1F/ul6hHLrY+xjJ9a9C1JktiHD1ZqM2LM8eiOZe0zI7ccg1h0EuJ2zLosie
+iyImVAcgxOHSWDh1VxhmQgPVQFA5DLiM6tITpSksYFVmg1rNDD/ThksB/3C2jjt/
+cf15qDDS2eWwsVzAuwoYqHiu/CphxIDxnnlC5bAyJWT7YtrS9WLVPwOrW96dAl98
+wXZcfM7Wj9fYp/LeQceOQH0UA2UMUslO/iPa1/mKx31EL5LeKJ63qwyn5DSbG7kT
+vKptLVN38/BveWAK470rLJw+TfXHBIgjBW54G1cXcVOYAD7PNd/upFVqCy3x3zHz
+Um5PSVytsA/j9Ad2HctliQ==
+`pragma protect data_method = "aes128-cbc"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 400 )
+`pragma protect data_block
+IGESNcsXZ0tqfRt0IRaqucbaLi2uW/8IYaOpve7xfQqKFLZju3tuumm7tZ0hA/IN
+NJ6lJwLijQIKb5Upnkh2rUMG3TZezMZQkU7s98+yA9w3B9pjMMS8KJdtUVCiioZS
+pTJrXPep30F1xQRG3a693Pvhl1BqsXEDbPtefY9Q86gFi4YRYCJakI51MhUN8zaR
+KTeeyIbdJ28vp0Vu3/M6+mwkI48cTqBCCRS0XzFOn6FwOvzAMZuXtfKipZyWqaPU
+bga2yCDe2Orjl570pkpBRA2ZyIAulDiDLOoHkWivhh0yIFmSY9wWGNZBkVW+4A8J
+DSPl719gx8G86Ie2i+TmImaHpYT1pmK9ahZzAdT98kHR7yulkgmxbtPZu39bavFr
+dhaCQWZ1CmRKWDWVCJejdG32JmJBGrfgVbmvGgoEER5jbcNAqYf3hcIWDh91tSUN
+F0rHrgmYeMyERGU+E4aZznP9UPoJWQ2oiSq3/mzNJjnoyalcJjLXekSM+B2Lqp2X
+4k2clLg02lpxsWkqYOeKtw==
+`pragma protect end_protected
+endmodule

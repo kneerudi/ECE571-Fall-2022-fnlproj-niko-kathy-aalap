@@ -1,0 +1,73 @@
+///////////////////////////////////////////////////////////
+// rojoblaze_devs.sv - new global definitions for the SystemVerilog conversion of a 
+// RojoBlaze, a pipelined PicoBlaze
+//
+// Authors: Seth Rohrbach (rseth@pdx.edu)
+//
+// Last Modified: March 2, 2020
+//
+//
+// Contains global typedefs, enums, structs, etc for the RojoBlaze.
+//
+// Acknowledgment:  SystemVerilog version created and tested by SethR, MilesS, 
+// ShubhankaSPM, and Supraj Vastrad for ECE 571 Winter 2020 final project
+//
+//
+//////////////////////////////////////////////////////////
+
+package rojoblaze_defs;
+`pragma protect begin_protected
+`pragma protect version = 1
+`pragma protect encrypt_agent = "QuestaSim" , encrypt_agent_info = "2019.2_1"
+`pragma protect key_keyowner = "Mentor Graphics Corporation" , key_keyname = "MGC-VERIF-SIM-RSA-2"
+`pragma protect key_method = "rsa"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 256 )
+`pragma protect key_block
+l18LBvmBk/mRIgaInhW4/7iOAtwKJGVcwRhdW6rkB58sdi0mRYdUgtJWeUX1MtJd
+UawzjG4I3swBbEHGqicOWGRP1NZNJQtrQ/QKmxF/yOnqhXW6Exf9Lu8hu3D5FvYY
+P+tuZbfB/2p+nCOnJo+CCdsjUD8Nx1jdKrjhbRTfcanOdBMiQzdqQAZ0onB3XSP7
+MMr3zpF0nIffsuB8v/51pOlFjqPyEgIKeiAQ/RKq+/jeqmhHDkZjRwZqzKV6MsJx
+vIUFgmoyEWM0QB/kjrKkmeKcyCqKIFGnyybhWPRtoOzomfY5W4FoZR7VUz3UjMFx
+c7oCKvAYt8KjJdBT5H0NKQ==
+`pragma protect data_method = "aes128-cbc"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 1760 )
+`pragma protect data_block
+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
+`pragma protect end_protected
+endpackage

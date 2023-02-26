@@ -1,0 +1,799 @@
+# vsim -c work.alt_rojo_tb work.blockram work.blockram_svp_unit work.disassembler work.disassembler_svp_unit work.kcpsm_register_svp_unit work.kcpsm_rojo_svp_unit work.kcpsmx work.kcpsmx3_idu_svp_unit work.kcpsmx3_inc work.kcpsmx_alu work.kcpsmx_alu_svp_unit work.kcpsmx_idu work.kcpsmx_register work.kcpsmx_scratch work.kcpsmx_scratch_svp_unit work.kcpsmx_stack work.kcpsmx_stack_svp_unit work.rojoblaze_defs work.tb_testprogs_sv_unit 
+# Start time: 14:20:24 on Dec 06,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2022.1 linux_x86_64 Jan 29 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.kcpsmx3_inc(fast)
+# Loading work.rojoblaze_defs(fast)
+# Loading work.disassembler_svp_unit(fast)
+# Loading work.kcpsmx_scratch_svp_unit(fast)
+# Loading work.kcpsmx_stack_svp_unit(fast)
+# Loading work.kcpsmx_alu_svp_unit(fast)
+# Loading work.kcpsm_register_svp_unit(fast)
+# Loading work.kcpsmx3_idu_svp_unit(fast)
+# Loading work.blockram_svp_unit(fast)
+# Loading work.kcpsm_rojo_svp_unit(fast)
+# Loading work.tb_testprogs_sv_unit(fast)
+# Loading work.alt_rojo_tb(fast)
+# Loading work.blockram(fast)
+# Loading work.disassembler(fast)
+# Loading work.kcpsmx(fast)
+# Loading work.kcpsmx_alu(fast)
+# Loading work.kcpsmx_idu(fast)
+# Loading work.kcpsmx_register(fast)
+# Loading work.kcpsmx_scratch(fast)
+# Loading work.kcpsmx_stack(fast)
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 0 ] || OP: Invalid Instruction || ZERO: x || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP:  || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: x || RG_WR_EN: x || WR_SRB: x || ZR_CR_WR_EN: x x
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Running test file alu_test.mem
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# [T: 5 ] || OP: Invalid Instruction || ZERO: x || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP:  || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 15 ] || OP: Invalid Instruction || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP:  || REG_DATA: 0 || ADD_SUB: ff || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 75 ] || OP: LOAD s3,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP:  || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 85 ] || OP: ADD  s3,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 95 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: ff || ADD_SUB: ff || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 105 ] || OP: JUMP 004  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# 
+#  ALU Result was 0; Error OP:         LOAD s3,00  , Zero flag was not set [ 0 ], FAIL 
+# 
+# 
+# [T: 115 ] || OP: LOAD s3,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RR_SLX || REG_DATA: 4 || ADD_SUB: xx || OP1: xx || OP2: 04 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  ALU Result was 0; Error OP:         LOAD s3,00  , Zero flag was not set [ 0 ], FAIL 
+# 
+# 
+# [T: 125 ] || OP: LOAD s3,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: fe || OP1: ff || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 135 ] || OP: ADD  s3,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: ff || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 145 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: ff || ADD_SUB: ff || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 155 ] || OP: JUMP 008  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# 
+#  ALU Result was 0; Error OP:         LOAD s3,FF  , Zero flag was not set [ 0 ], FAIL 
+# 
+# 
+# [T: 165 ] || OP: LOAD s3,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 8 || ADD_SUB: xx || OP1: xx || OP2: 08 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  ALU Result was 0; Error OP:         LOAD s3,FF  , Zero flag was not set [ 0 ], FAIL 
+# 
+# 
+# [T: 175 ] || OP: LOAD s3,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fd || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 ff should NOT equal fd, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 185 ] || OP: ADD  s3,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fd || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 ff should NOT equal fd, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 195 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: ff || ADD_SUB: ff || OP1: ff || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 01 should NOT equal ff, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# 
+#  ALU was Result > FF ; Error OP:           JUMP 00C  , ALU Carry Out was not set [ 0 ], FAIL 
+# 
+# 
+# [T: 205 ] || OP: JUMP 00C  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 215 ] || OP: LOAD s3,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RR_SLX || REG_DATA: c || ADD_SUB: xx || OP1: xx || OP2: 0c || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 225 ] || OP: LOAD s3,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fd || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 ff should NOT equal fd, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 235 ] || OP: ADDCYs3,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fd || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 ff should NOT equal fd, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 245 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: ff || ADD_SUB: ff || OP1: ff || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 01 should NOT equal ff, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# 
+# 
+#  ALU Result > FF; Error OP:           JUMP 010  , ALU Carry Out was not set [ 0 ], FAIL 
+# 
+# 
+# [T: 255 ] || OP: JUMP 010  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 265 ] || OP: LOAD s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 10 || ADD_SUB: xx || OP1: xx || OP2: 10 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 275 ] || OP: LOAD s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 285 ] || OP: SUB  s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: ff || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 295 ] || OP: JUMP 013  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: fd || ADD_SUB: fd || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 305 ] || OP: LOAD s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RL_SRX || REG_DATA: 13 || ADD_SUB: xx || OP1: xx || OP2: 13 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 315 ] || OP: LOAD s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: fc || OP1: fd || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 325 ] || OP: SUB  s4,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: ff || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 335 ] || OP: JUMP 016  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: fc || ADD_SUB: fc || OP1: 00 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 345 ] || OP: LOAD s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SC || REG_DATA: 16 || ADD_SUB: xx || OP1: xx || OP2: 16 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 355 ] || OP: LOAD s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: fb || OP1: fc || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 365 ] || OP: SUBCYs4,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: ff || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 375 ] || OP: JUMP 019  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: fd || ADD_SUB: fd || OP1: 00 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 385 ] || OP: AND  s4,s4  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 19 || ADD_SUB: xx || OP1: xx || OP2: 19 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 395 ] || OP: AND  s4,s4  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: fd || ADD_SUB: f9 || OP1: fd || OP2: fd || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 fd should NOT equal f9, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 405 ] || OP: JUMP 01B  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: fd || ADD_SUB: f9 || OP1: fd || OP2: fd || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 fd should NOT equal f9, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 415 ] || OP: LOAD sA,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RL_SRX || REG_DATA: 1b || ADD_SUB: xx || OP1: xx || OP2: 1b || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 425 ] || OP: LOAD sA,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 435 ] || OP: COMPARE sA,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: ff || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 445 ] || OP: JUMP 01E  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: fc || ADD_SUB: fc || OP1: 00 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 455 ] || OP: LOAD sB,05  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SC || REG_DATA: 1e || ADD_SUB: xx || OP1: xx || OP2: 1e || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 465 ] || OP: LOAD sB,05  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RR_SLX || REG_DATA: 5 || ADD_SUB: xx || OP1: xx || OP2: 05 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 475 ] || OP: TEST sB,04  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RR_SLX || REG_DATA: 5 || ADD_SUB: 09 || OP1: 05 || OP2: 05 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 05 +/- OP2 05 should NOT equal 09, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 485 ] || OP: JUMP 021  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: RR_SLX || REG_DATA: 4 || ADD_SUB: 08 || OP1: 05 || OP2: 04 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 05 +/- OP2 04 should NOT equal 08, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 495 ] || OP: TEST s0,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 21 || ADD_SUB: xx || OP1: xx || OP2: 21 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 505 ] || OP: TEST s0,FF  || ZERO: 0 || CARRY: x || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 515 ] || OP: JUMP 023  || ZERO: x || CARRY: x || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 525 ] || OP: LOAD sC,00  || ZERO: x || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RL_SRX || REG_DATA: 23 || ADD_SUB: xx || OP1: xx || OP2: 23 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 535 ] || OP: LOAD sC,00  || ZERO: x || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 545 ] || OP: COMPARE sC,00  || ZERO: x || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: ff || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 555 ] || OP: LOAD s0,s0  || ZERO: x || CARRY: 1 || SHIFT_BIT: x || SHIFT_OP: SA || REG_DATA: fd || ADD_SUB: fd || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 565 ] || OP: COMPARE sC,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 575 ] || OP: JUMP 028  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: fc || ADD_SUB: fc || OP1: 00 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 585 ] || OP: LOAD s8,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 28 || ADD_SUB: xx || OP1: xx || OP2: 28 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 595 ] || OP: LOAD s8,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: xx || OP1: xx || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 605 ] || OP: SL0 s8  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fd || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 ff should NOT equal fd, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 615 ] || OP: JUMP 02B  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 0 || SHIFT_OP: SC || REG_DATA: fe || ADD_SUB: 04 || OP1: ff || OP2: 06 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 06 should NOT equal 04, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 625 ] || OP: LOAD s9,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RL_SRX || REG_DATA: 2b || ADD_SUB: xx || OP1: xx || OP2: 2b || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 635 ] || OP: LOAD s9,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: xx || OP1: xx || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 645 ] || OP: SL1 s9  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fd || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 ff should NOT equal fd, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 655 ] || OP: JUMP 02E  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: 05 || OP1: ff || OP2: 07 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 07 should NOT equal 05, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 665 ] || OP: LOAD s9,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SC || REG_DATA: 2e || ADD_SUB: xx || OP1: xx || OP2: 2e || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 675 ] || OP: LOAD s9,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 1 || ADD_SUB: ff || OP1: ff || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 01 should NOT equal ff, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 685 ] || OP: SR1 s9  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 1 || ADD_SUB: 01 || OP1: 01 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 01 +/- OP2 01 should NOT equal 01, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 695 ] || OP: JUMP 031  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: 80 || ADD_SUB: 0f || OP1: 01 || OP2: 0f || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 01 +/- OP2 0f should NOT equal 0f, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 705 ] || OP: LOAD sD,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 31 || ADD_SUB: xx || OP1: xx || OP2: 31 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 715 ] || OP: LOAD sD,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: xx || OP1: xx || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 725 ] || OP: RL sD  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fd || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 ff should NOT equal fd, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 735 ] || OP: JUMP 034  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: 00 || OP1: ff || OP2: 02 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 02 should NOT equal 00, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 745 ] || OP: LOAD sD,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RR_SLX || REG_DATA: 34 || ADD_SUB: xx || OP1: xx || OP2: 34 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 755 ] || OP: LOAD sD,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fd || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 ff should NOT equal fd, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 765 ] || OP: RR sD  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fd || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 ff should NOT equal fd, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 775 ] || OP: JUMP 037  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: RR_SLX || REG_DATA: ff || ADD_SUB: 0a || OP1: ff || OP2: 0c || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 0c should NOT equal 0a, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 785 ] || OP: LOAD s2,40  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: 37 || ADD_SUB: xx || OP1: xx || OP2: 37 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 795 ] || OP: LOAD s2,40  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 40 || ADD_SUB: xx || OP1: xx || OP2: 40 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 805 ] || OP: LOAD s1,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 40 || ADD_SUB: 7f || OP1: 40 || OP2: 40 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 40 +/- OP2 40 should NOT equal 7f, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 815 ] || OP: JUMP 03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 825 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RL_SRX || REG_DATA: 3a || ADD_SUB: xx || OP1: xx || OP2: 3a || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 835 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 845 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 855 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 3c || ADD_SUB: 3c || OP1: 40 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 40 +/- OP2 01 should NOT equal 3c, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 40 the next result should be  3f , but is 3c, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 865 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3c || ADD_SUB: 77 || OP1: 3c || OP2: 3c || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 3c +/- OP2 3c should NOT equal 77, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 875 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 885 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 895 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 905 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 38 || ADD_SUB: 38 || OP1: 3c || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 3c +/- OP2 01 should NOT equal 38, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 3c the next result should be  3b , but is 38, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 915 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 38 || ADD_SUB: 6f || OP1: 38 || OP2: 38 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 38 +/- OP2 38 should NOT equal 6f, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 925 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 935 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 945 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 955 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 34 || ADD_SUB: 34 || OP1: 38 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 38 +/- OP2 01 should NOT equal 34, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 38 the next result should be  37 , but is 34, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 965 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 34 || ADD_SUB: 67 || OP1: 34 || OP2: 34 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 34 +/- OP2 34 should NOT equal 67, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 975 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 985 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 995 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1005 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 30 || ADD_SUB: 30 || OP1: 34 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 34 +/- OP2 01 should NOT equal 30, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 34 the next result should be  33 , but is 30, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1015 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 30 || ADD_SUB: 5f || OP1: 30 || OP2: 30 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 30 +/- OP2 30 should NOT equal 5f, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1025 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1035 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1045 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1055 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2c || ADD_SUB: 2c || OP1: 30 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 30 +/- OP2 01 should NOT equal 2c, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 30 the next result should be  2f , but is 2c, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1065 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2c || ADD_SUB: 57 || OP1: 2c || OP2: 2c || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 2c +/- OP2 2c should NOT equal 57, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1075 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1085 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1095 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1105 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 28 || ADD_SUB: 28 || OP1: 2c || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 2c +/- OP2 01 should NOT equal 28, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 2c the next result should be  2b , but is 28, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1115 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 28 || ADD_SUB: 4f || OP1: 28 || OP2: 28 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 28 +/- OP2 28 should NOT equal 4f, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1125 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1135 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1145 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1155 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 24 || ADD_SUB: 24 || OP1: 28 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 28 +/- OP2 01 should NOT equal 24, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 28 the next result should be  27 , but is 24, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1165 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 24 || ADD_SUB: 47 || OP1: 24 || OP2: 24 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 24 +/- OP2 24 should NOT equal 47, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1175 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1185 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1195 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1205 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 20 || ADD_SUB: 20 || OP1: 24 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 24 +/- OP2 01 should NOT equal 20, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 24 the next result should be  23 , but is 20, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1215 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 20 || ADD_SUB: 3f || OP1: 20 || OP2: 20 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 20 +/- OP2 20 should NOT equal 3f, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1225 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1235 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1245 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1255 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1c || ADD_SUB: 1c || OP1: 20 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 20 +/- OP2 01 should NOT equal 1c, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 20 the next result should be  1f , but is 1c, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1265 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1c || ADD_SUB: 37 || OP1: 1c || OP2: 1c || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 1c +/- OP2 1c should NOT equal 37, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1275 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1285 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1295 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1305 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 18 || ADD_SUB: 18 || OP1: 1c || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 1c +/- OP2 01 should NOT equal 18, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 1c the next result should be  1b , but is 18, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1315 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 18 || ADD_SUB: 2f || OP1: 18 || OP2: 18 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 18 +/- OP2 18 should NOT equal 2f, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1325 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1335 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1345 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1355 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 14 || ADD_SUB: 14 || OP1: 18 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 18 +/- OP2 01 should NOT equal 14, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 18 the next result should be  17 , but is 14, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1365 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 14 || ADD_SUB: 27 || OP1: 14 || OP2: 14 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 14 +/- OP2 14 should NOT equal 27, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1375 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1385 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1395 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1405 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 10 || ADD_SUB: 10 || OP1: 14 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 14 +/- OP2 01 should NOT equal 10, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 14 the next result should be  13 , but is 10, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1415 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 10 || ADD_SUB: 1f || OP1: 10 || OP2: 10 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 10 +/- OP2 10 should NOT equal 1f, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1425 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1435 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1445 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1455 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: c || ADD_SUB: 0c || OP1: 10 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 10 +/- OP2 01 should NOT equal 0c, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 10 the next result should be  0f , but is 0c, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1465 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: c || ADD_SUB: 17 || OP1: 0c || OP2: 0c || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 0c +/- OP2 0c should NOT equal 17, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1475 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1485 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1495 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1505 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 8 || ADD_SUB: 08 || OP1: 0c || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 0c +/- OP2 01 should NOT equal 08, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 0c the next result should be  0b , but is 08, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1515 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 8 || ADD_SUB: 0f || OP1: 08 || OP2: 08 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 08 +/- OP2 08 should NOT equal 0f, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1525 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1535 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1545 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1555 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 4 || ADD_SUB: 04 || OP1: 08 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 08 +/- OP2 01 should NOT equal 04, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 08 the next result should be  07 , but is 04, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1565 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 4 || ADD_SUB: 07 || OP1: 04 || OP2: 04 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 04 +/- OP2 04 should NOT equal 07, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1575 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# [T: 1585 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1595 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1605 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 04 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 04 +/- OP2 01 should NOT equal 00, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# 
+# 
+#  Error: STORE after SUB S2,01 operand_a [OP1] is 04 the next result should be  03 , but is 00, FAIL 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1615 ] || OP: JUMP NZ,03A  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: ff || OP1: 00 || OP2: 00 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1625 ] || OP: LOAD s0,s0  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: fb || OP1: fd || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+# 
+#  Error: OP1 fd +/- OP2 ff should NOT equal fb, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1635 ] || OP: RETURN  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1645 ] || OP: Invalid Instruction || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1655 ] || OP: Invalid Instruction || ZERO: 1 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP:  || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# 
+#  
+#  ---------------------------------------- 
+#  FAILED To Write to Scratchpad 
+# 
+# 
+# ** Note: $stop    : /home/niko/Downloads/fnlproj-niko-kathy-aalap/team-demo/with_bug_pipelined_picoblaze_hdl/tb_testprogs.sv(349)
+#    Time: 6050 ns  Iteration: 0  Instance: /alt_rojo_tb
+# Break at /home/niko/Downloads/fnlproj-niko-kathy-aalap/team-demo/with_bug_pipelined_picoblaze_hdl/tb_testprogs.sv line 349
+# Stopped at /home/niko/Downloads/fnlproj-niko-kathy-aalap/team-demo/with_bug_pipelined_picoblaze_hdl/tb_testprogs.sv line 349

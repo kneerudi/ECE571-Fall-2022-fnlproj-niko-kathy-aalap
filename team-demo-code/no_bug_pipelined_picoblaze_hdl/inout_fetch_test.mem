@@ -1,0 +1,101 @@
+/* Symbol Table */
+// counter = REGISTER: 6
+// dest = REGISTER: 5
+// endloop = LABEL: 30
+// main = LABEL: 0
+// op1 = REGISTER: 2
+// op2 = REGISTER: 3
+// res = REGISTER: 4
+// s0 = REGISTER: 0
+// s1 = REGISTER: 1
+// s2 = REGISTER: 2
+// s3 = REGISTER: 3
+// s4 = REGISTER: 4
+// s5 = REGISTER: 5
+// s6 = REGISTER: 6
+// s7 = REGISTER: 7
+// s8 = REGISTER: 8
+// s9 = REGISTER: 9
+// sA = REGISTER: 10
+// sB = REGISTER: 11
+// sC = REGISTER: 12
+// sD = REGISTER: 13
+// sE = REGISTER: 14
+// sF = REGISTER: 15
+// transf = REGISTER: 7
+
+/* Program Code */
+// #1: ;--------------------------------------------------------
+// #2: ; inout_fetch_test.psm - short program to test valid INPUT, OUTPUT, and FETCH operations
+// #3: ;
+// #4: ; Author: Seth Rohrbach
+// #5: ; Modified: March 17, 2020
+// #6: ;
+// #7: ; Description:
+// #8: ; This short program will test a limited set of INPUT, OUTPUT, and FETCH operations. We are using 1 hot encoding and only checking 4 ports
+// #9: ; because it looks like there are substantial timing issues with INPUT and OUTPUT ops in the RojoBlaze.
+// #10: ;
+// #11: ;-------------------------------------------------------
+// #12: ;
+// #13: ;====================
+// #14: ;== Register Names ==
+// #15: ;====================
+// #16: NAMEREG(s2,op1)
+// #17: NAMEREG(s3,op2)
+// #18: NAMEREG(s4,res)
+// #19: NAMEREG(s5,dest)
+// #20: NAMEREG(s6,counter)
+// #21: NAMEREG(s7,transf)
+// #22: ;
+// #23: ;
+// #24: ;
+// #25: ;==============
+// #26: ;=== main() ===
+// #27: ;==============
+@000 // #28: ADDRESS(0)
+// #29: ;
+// @000 #30: [main]
+00200 // @000 #31: LOAD(op1,0)
+00500 // @001 #32: LOAD(dest,0) ;point to base of the scratchpad
+01aa0 // @002 #33: LOAD(sA,sA)
+// #34: ;    INPUT res, 01       ;Read from input port 01
+01aa0 // @003 #35: LOAD(sA,sA) ;NOP
+// #36: ;    STORE res, (dest)
+// #37: ;    ADD dest, 01
+// #38: ;    LOAD sA, sA
+// #39: ;    INPUT res, 02       ;Read from input port 02
+// #40: ;    LOAD sA, sA         ;NOP
+// #41: ;    STORE res, (dest)   ;
+// #42: ;    ADD dest, 01
+04404 // @004 #43: INPUT(res,4) ;Read from input port 04
+01aa0 // @005 #44: LOAD(sA,sA) ;NOP
+2f450 // @006 #45: STORE(res,dest)
+18501 // @007 #46: ADD(dest,1)
+04408 // @008 #47: INPUT(res,8) ;Read from input port 08
+01aa0 // @009 #48: LOAD(sA,sA) ;NOP
+2f450 // @00a #49: STORE(res,dest)
+00500 // @00b #50: LOAD(dest,0) ;Reset back to base scratchpad addr
+07750 // @00c #51: FETCH(transf,dest)
+18501 // @00d #52: ADD(dest,1)
+2c701 // @00e #53: OUTPUT(transf,1) ;WRITE to OUTPUT port 01
+01aa0 // @00f #54: LOAD(sA,sA) ;NOP
+07750 // @010 #55: FETCH(transf,dest)
+18501 // @011 #56: ADD(dest,1)
+2c702 // @012 #57: OUTPUT(transf,2) ;WRITE to OUTPUT port 02
+01aa0 // @013 #58: LOAD(sA,sA) ;NOP
+07750 // @014 #59: FETCH(transf,dest)
+18501 // @015 #60: ADD(dest,1)
+2c704 // @016 #61: OUTPUT(transf,4) ;WRITE to OUTPUT port 04
+01aa0 // @017 #62: LOAD(sA,sA) ;NOP
+07750 // @018 #63: FETCH(transf,dest)
+18501 // @019 #64: ADD(dest,1)
+2c708 // @01a #65: OUTPUT(transf,8) ;WRITE to OUTPUT port 08
+01aa0 // @01b #66: LOAD(sA,sA) ;NOP
+00df0 // @01c #67: LOAD(sD,F0)
+2ed3f // @01d #68: STORE(sD,63) ;WRITE to last RAM location so TB knows we are finished.
+// @01e #70: [endloop] ;Lets the pipeline finish
+01aa0 // @01e #71: LOAD(sA,sA) ;NOP
+3401e // @01f #72: JUMP(endloop)
+01aa0 // @020 #73: LOAD(sA,sA) ;NOP
+01aa0 // @021 #74: LOAD(sA,sA) ;NOP
+00b44 // @022 #75: LOAD(sB,68) ;ERROR

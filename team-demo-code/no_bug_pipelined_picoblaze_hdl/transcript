@@ -1,0 +1,905 @@
+# vsim -c work.alt_rojo_tb work.blockram work.blockram_sv_unit work.disassembler work.disassembler_sv_unit work.kcpsm_register_sv_unit work.kcpsm_rojo_sv_unit work.kcpsmx work.kcpsmx3_idu_sv_unit work.kcpsmx3_inc work.kcpsmx_alu work.kcpsmx_alu_sv_unit work.kcpsmx_idu work.kcpsmx_register work.kcpsmx_scratch work.kcpsmx_scratch_sv_unit work.kcpsmx_stack work.kcpsmx_stack_sv_unit work.rojoblaze_defs work.tb_testprogs_sv_unit 
+# Start time: 14:18:39 on Dec 06,2022
+# ** Note: (vsim-3812) Design is being optimized...
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2022.1 linux_x86_64 Jan 29 2022
+# //
+# //  Copyright 1991-2022 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.kcpsmx3_inc(fast)
+# Loading work.rojoblaze_defs(fast)
+# Loading work.disassembler_sv_unit(fast)
+# Loading work.kcpsmx_scratch_sv_unit(fast)
+# Loading work.kcpsmx_stack_sv_unit(fast)
+# Loading work.kcpsmx_alu_sv_unit(fast)
+# Loading work.kcpsm_register_sv_unit(fast)
+# Loading work.kcpsmx3_idu_sv_unit(fast)
+# Loading work.blockram_sv_unit(fast)
+# Loading work.kcpsm_rojo_sv_unit(fast)
+# Loading work.tb_testprogs_sv_unit(fast)
+# Loading work.alt_rojo_tb(fast)
+# Loading work.blockram(fast)
+# Loading work.disassembler(fast)
+# Loading work.kcpsmx(fast)
+# Loading work.kcpsmx_alu(fast)
+# Loading work.kcpsmx_idu(fast)
+# Loading work.kcpsmx_register(fast)
+# Loading work.kcpsmx_scratch(fast)
+# Loading work.kcpsmx_stack(fast)
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 0 ] || OP: Invalid Instruction || ZERO: x || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP:  || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: x || RG_WR_EN: x || WR_SRB: x || ZR_CR_WR_EN: x x
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Running test file alu_test.mem
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# [T: 5 ] || OP: Invalid Instruction || ZERO: x || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP:  || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 15 ] || OP: Invalid Instruction || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP:  || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 75 ] || OP: LOAD s3,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP:  || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 85 ] || OP: ADD  s3,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 95 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 105 ] || OP: JUMP 004  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 115 ] || OP: LOAD s3,00  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RR_SLX || REG_DATA: 4 || ADD_SUB: xx || OP1: xx || OP2: 04 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 125 ] || OP: LOAD s3,00  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 135 ] || OP: ADD  s3,00  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 145 ] || OP: LOAD s0,s0  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 155 ] || OP: JUMP 008  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 165 ] || OP: LOAD s3,FF  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 8 || ADD_SUB: xx || OP1: xx || OP2: 08 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 175 ] || OP: LOAD s3,FF  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: ff || OP1: 00 || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 185 ] || OP: ADD  s3,01  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fe || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 195 ] || OP: LOAD s0,s0  || ZERO: 1 || CARRY: 1 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: ff || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 205 ] || OP: JUMP 00C  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 215 ] || OP: LOAD s3,FF  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RR_SLX || REG_DATA: c || ADD_SUB: xx || OP1: xx || OP2: 0c || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 225 ] || OP: LOAD s3,FF  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: ff || OP1: 00 || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 235 ] || OP: ADDCYs3,01  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fe || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 245 ] || OP: LOAD s0,s0  || ZERO: 1 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 1 || ADD_SUB: 01 || OP1: ff || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# 
+# 
+#  Error: OP1 ff +/- OP2 01 should NOT equal 01, you should ignore the error if OP1 == FF && OP2 == 1 
+# 
+# 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 255 ] || OP: JUMP 010  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 265 ] || OP: LOAD s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 10 || ADD_SUB: xx || OP1: xx || OP2: 10 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 275 ] || OP: LOAD s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 285 ] || OP: SUB  s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 295 ] || OP: JUMP 013  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 305 ] || OP: LOAD s4,00  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RL_SRX || REG_DATA: 13 || ADD_SUB: xx || OP1: xx || OP2: 13 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 315 ] || OP: LOAD s4,00  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 325 ] || OP: SUB  s4,01  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 335 ] || OP: JUMP 016  || ZERO: 1 || CARRY: 1 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: ff || ADD_SUB: ff || OP1: 00 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 345 ] || OP: LOAD s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SC || REG_DATA: 16 || ADD_SUB: xx || OP1: xx || OP2: 16 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 355 ] || OP: LOAD s4,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: ff || OP1: ff || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 365 ] || OP: SUBCYs4,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 375 ] || OP: JUMP 019  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: fe || ADD_SUB: fe || OP1: 00 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 385 ] || OP: AND  s4,s4  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 19 || ADD_SUB: xx || OP1: xx || OP2: 19 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 395 ] || OP: AND  s4,s4  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: fe || ADD_SUB: fc || OP1: fe || OP2: fe || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 405 ] || OP: JUMP 01B  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: fe || ADD_SUB: fc || OP1: fe || OP2: fe || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 415 ] || OP: LOAD sA,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RL_SRX || REG_DATA: 1b || ADD_SUB: xx || OP1: xx || OP2: 1b || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 425 ] || OP: LOAD sA,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 435 ] || OP: COMPARE sA,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 445 ] || OP: JUMP 01E  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: ff || ADD_SUB: ff || OP1: 00 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 455 ] || OP: LOAD sB,05  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SC || REG_DATA: 1e || ADD_SUB: xx || OP1: xx || OP2: 1e || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 465 ] || OP: LOAD sB,05  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RR_SLX || REG_DATA: 5 || ADD_SUB: xx || OP1: xx || OP2: 05 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 475 ] || OP: TEST sB,04  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RR_SLX || REG_DATA: 5 || ADD_SUB: 0a || OP1: 05 || OP2: 05 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 485 ] || OP: JUMP 021  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: RR_SLX || REG_DATA: 4 || ADD_SUB: 09 || OP1: 05 || OP2: 04 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 495 ] || OP: TEST s0,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 21 || ADD_SUB: xx || OP1: xx || OP2: 21 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 505 ] || OP: TEST s0,FF  || ZERO: 0 || CARRY: x || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 515 ] || OP: JUMP 023  || ZERO: x || CARRY: x || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 525 ] || OP: LOAD sC,00  || ZERO: x || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RL_SRX || REG_DATA: 23 || ADD_SUB: xx || OP1: xx || OP2: 23 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 535 ] || OP: LOAD sC,00  || ZERO: x || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 545 ] || OP: COMPARE sC,00  || ZERO: x || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 555 ] || OP: LOAD s0,s0  || ZERO: x || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 565 ] || OP: COMPARE sC,01  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 575 ] || OP: JUMP 028  || ZERO: 1 || CARRY: 1 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: ff || ADD_SUB: ff || OP1: 00 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 585 ] || OP: LOAD s8,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 28 || ADD_SUB: xx || OP1: xx || OP2: 28 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 595 ] || OP: LOAD s8,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: xx || OP1: xx || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 605 ] || OP: SL0 s8  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fe || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 615 ] || OP: JUMP 02B  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 0 || SHIFT_OP: SC || REG_DATA: fe || ADD_SUB: 05 || OP1: ff || OP2: 06 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 625 ] || OP: LOAD s9,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RL_SRX || REG_DATA: 2b || ADD_SUB: xx || OP1: xx || OP2: 2b || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 635 ] || OP: LOAD s9,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: xx || OP1: xx || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 645 ] || OP: SL1 s9  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fe || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 655 ] || OP: JUMP 02E  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: 06 || OP1: ff || OP2: 07 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 665 ] || OP: LOAD s9,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SC || REG_DATA: 2e || ADD_SUB: xx || OP1: xx || OP2: 2e || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 675 ] || OP: LOAD s9,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 1 || ADD_SUB: 00 || OP1: ff || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 685 ] || OP: SR1 s9  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 1 || ADD_SUB: 02 || OP1: 01 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 695 ] || OP: JUMP 031  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: 80 || ADD_SUB: 10 || OP1: 01 || OP2: 0f || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 705 ] || OP: LOAD sD,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 31 || ADD_SUB: xx || OP1: xx || OP2: 31 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 715 ] || OP: LOAD sD,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: xx || OP1: xx || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 725 ] || OP: RL sD  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fe || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 735 ] || OP: JUMP 034  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: ff || ADD_SUB: 01 || OP1: ff || OP2: 02 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 745 ] || OP: LOAD sD,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RR_SLX || REG_DATA: 34 || ADD_SUB: xx || OP1: xx || OP2: 34 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 755 ] || OP: LOAD sD,FF  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fe || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 765 ] || OP: RR sD  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: ff || ADD_SUB: fe || OP1: ff || OP2: ff || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 775 ] || OP: JUMP 037  || ZERO: 0 || CARRY: 1 || SHIFT_BIT: 1 || SHIFT_OP: RR_SLX || REG_DATA: ff || ADD_SUB: 0b || OP1: ff || OP2: 0c || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 785 ] || OP: LOAD s2,40  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SC || REG_DATA: 37 || ADD_SUB: xx || OP1: xx || OP2: 37 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 795 ] || OP: LOAD s2,40  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 40 || ADD_SUB: xx || OP1: xx || OP2: 40 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 805 ] || OP: LOAD s1,00  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 40 || ADD_SUB: 80 || OP1: 40 || OP2: 40 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 815 ] || OP: JUMP 03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 825 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP: RL_SRX || REG_DATA: 3a || ADD_SUB: xx || OP1: xx || OP2: 3a || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 835 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 845 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 855 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: SA || REG_DATA: 3f || ADD_SUB: 3f || OP1: 40 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 865 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3f || ADD_SUB: 7e || OP1: 3f || OP2: 3f || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 875 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 885 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 895 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 905 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3e || ADD_SUB: 3e || OP1: 3f || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 915 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3e || ADD_SUB: 7c || OP1: 3e || OP2: 3e || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 925 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 935 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 945 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 955 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3d || ADD_SUB: 3d || OP1: 3e || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 965 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3d || ADD_SUB: 7a || OP1: 3d || OP2: 3d || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 975 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 985 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 995 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1005 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3c || ADD_SUB: 3c || OP1: 3d || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1015 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3c || ADD_SUB: 78 || OP1: 3c || OP2: 3c || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1025 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1035 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1045 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1055 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3b || ADD_SUB: 3b || OP1: 3c || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1065 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3b || ADD_SUB: 76 || OP1: 3b || OP2: 3b || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1075 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1085 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1095 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1105 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3a || ADD_SUB: 3a || OP1: 3b || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1115 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3a || ADD_SUB: 74 || OP1: 3a || OP2: 3a || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1125 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1135 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1145 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1155 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 39 || ADD_SUB: 39 || OP1: 3a || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1165 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 39 || ADD_SUB: 72 || OP1: 39 || OP2: 39 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1175 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1185 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1195 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1205 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 38 || ADD_SUB: 38 || OP1: 39 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1215 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 38 || ADD_SUB: 70 || OP1: 38 || OP2: 38 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1225 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1235 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1245 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1255 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 37 || ADD_SUB: 37 || OP1: 38 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1265 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 37 || ADD_SUB: 6e || OP1: 37 || OP2: 37 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1275 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1285 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1295 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1305 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 36 || ADD_SUB: 36 || OP1: 37 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1315 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 36 || ADD_SUB: 6c || OP1: 36 || OP2: 36 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1325 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1335 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1345 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1355 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 35 || ADD_SUB: 35 || OP1: 36 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1365 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 35 || ADD_SUB: 6a || OP1: 35 || OP2: 35 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1375 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1385 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1395 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1405 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 34 || ADD_SUB: 34 || OP1: 35 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1415 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 34 || ADD_SUB: 68 || OP1: 34 || OP2: 34 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1425 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1435 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1445 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1455 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 33 || ADD_SUB: 33 || OP1: 34 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1465 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 33 || ADD_SUB: 66 || OP1: 33 || OP2: 33 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1475 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1485 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1495 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1505 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 32 || ADD_SUB: 32 || OP1: 33 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1515 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 32 || ADD_SUB: 64 || OP1: 32 || OP2: 32 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1525 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1535 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1545 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1555 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 31 || ADD_SUB: 31 || OP1: 32 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1565 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 31 || ADD_SUB: 62 || OP1: 31 || OP2: 31 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1575 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1585 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1595 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1605 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 30 || ADD_SUB: 30 || OP1: 31 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1615 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 30 || ADD_SUB: 60 || OP1: 30 || OP2: 30 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1625 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1635 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1645 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1655 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2f || ADD_SUB: 2f || OP1: 30 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1665 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2f || ADD_SUB: 5e || OP1: 2f || OP2: 2f || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1675 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1685 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1695 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1705 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2e || ADD_SUB: 2e || OP1: 2f || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1715 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2e || ADD_SUB: 5c || OP1: 2e || OP2: 2e || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1725 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1735 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1745 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1755 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2d || ADD_SUB: 2d || OP1: 2e || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1765 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2d || ADD_SUB: 5a || OP1: 2d || OP2: 2d || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1775 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1785 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1795 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1805 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2c || ADD_SUB: 2c || OP1: 2d || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1815 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2c || ADD_SUB: 58 || OP1: 2c || OP2: 2c || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1825 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1835 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1845 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1855 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2b || ADD_SUB: 2b || OP1: 2c || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1865 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2b || ADD_SUB: 56 || OP1: 2b || OP2: 2b || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1875 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1885 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1895 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1905 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2a || ADD_SUB: 2a || OP1: 2b || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1915 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2a || ADD_SUB: 54 || OP1: 2a || OP2: 2a || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1925 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1935 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1945 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1955 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 29 || ADD_SUB: 29 || OP1: 2a || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1965 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 29 || ADD_SUB: 52 || OP1: 29 || OP2: 29 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1975 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 1985 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 1995 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2005 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 28 || ADD_SUB: 28 || OP1: 29 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2015 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 28 || ADD_SUB: 50 || OP1: 28 || OP2: 28 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2025 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2035 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2045 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2055 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 27 || ADD_SUB: 27 || OP1: 28 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2065 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 27 || ADD_SUB: 4e || OP1: 27 || OP2: 27 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2075 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2085 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2095 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2105 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 26 || ADD_SUB: 26 || OP1: 27 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2115 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 26 || ADD_SUB: 4c || OP1: 26 || OP2: 26 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2125 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2135 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2145 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2155 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 25 || ADD_SUB: 25 || OP1: 26 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2165 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 25 || ADD_SUB: 4a || OP1: 25 || OP2: 25 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2175 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2185 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2195 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2205 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 24 || ADD_SUB: 24 || OP1: 25 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2215 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 24 || ADD_SUB: 48 || OP1: 24 || OP2: 24 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2225 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2235 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2245 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2255 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 23 || ADD_SUB: 23 || OP1: 24 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2265 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 23 || ADD_SUB: 46 || OP1: 23 || OP2: 23 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2275 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2285 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2295 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2305 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 22 || ADD_SUB: 22 || OP1: 23 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2315 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 22 || ADD_SUB: 44 || OP1: 22 || OP2: 22 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2325 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2335 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2345 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2355 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 21 || ADD_SUB: 21 || OP1: 22 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2365 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 21 || ADD_SUB: 42 || OP1: 21 || OP2: 21 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2375 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2385 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2395 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2405 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 20 || ADD_SUB: 20 || OP1: 21 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2415 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 20 || ADD_SUB: 40 || OP1: 20 || OP2: 20 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2425 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2435 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2445 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2455 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1f || ADD_SUB: 1f || OP1: 20 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2465 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1f || ADD_SUB: 3e || OP1: 1f || OP2: 1f || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2475 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2485 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2495 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2505 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1e || ADD_SUB: 1e || OP1: 1f || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2515 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1e || ADD_SUB: 3c || OP1: 1e || OP2: 1e || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2525 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2535 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2545 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2555 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1d || ADD_SUB: 1d || OP1: 1e || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2565 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1d || ADD_SUB: 3a || OP1: 1d || OP2: 1d || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2575 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2585 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2595 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2605 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1c || ADD_SUB: 1c || OP1: 1d || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2615 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1c || ADD_SUB: 38 || OP1: 1c || OP2: 1c || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2625 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2635 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2645 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2655 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1b || ADD_SUB: 1b || OP1: 1c || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2665 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1b || ADD_SUB: 36 || OP1: 1b || OP2: 1b || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2675 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2685 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2695 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2705 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1a || ADD_SUB: 1a || OP1: 1b || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2715 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1a || ADD_SUB: 34 || OP1: 1a || OP2: 1a || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2725 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2735 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2745 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2755 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 19 || ADD_SUB: 19 || OP1: 1a || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2765 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 19 || ADD_SUB: 32 || OP1: 19 || OP2: 19 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2775 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2785 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2795 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2805 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 18 || ADD_SUB: 18 || OP1: 19 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2815 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 18 || ADD_SUB: 30 || OP1: 18 || OP2: 18 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2825 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2835 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2845 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2855 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 17 || ADD_SUB: 17 || OP1: 18 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2865 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 17 || ADD_SUB: 2e || OP1: 17 || OP2: 17 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2875 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2885 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2895 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2905 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 16 || ADD_SUB: 16 || OP1: 17 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2915 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 16 || ADD_SUB: 2c || OP1: 16 || OP2: 16 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2925 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2935 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2945 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2955 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 15 || ADD_SUB: 15 || OP1: 16 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2965 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 15 || ADD_SUB: 2a || OP1: 15 || OP2: 15 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2975 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 2985 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 2995 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3005 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 14 || ADD_SUB: 14 || OP1: 15 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3015 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 14 || ADD_SUB: 28 || OP1: 14 || OP2: 14 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3025 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3035 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3045 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3055 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 13 || ADD_SUB: 13 || OP1: 14 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3065 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 13 || ADD_SUB: 26 || OP1: 13 || OP2: 13 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3075 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3085 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3095 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3105 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 12 || ADD_SUB: 12 || OP1: 13 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3115 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 12 || ADD_SUB: 24 || OP1: 12 || OP2: 12 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3125 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3135 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3145 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3155 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 11 || ADD_SUB: 11 || OP1: 12 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3165 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 11 || ADD_SUB: 22 || OP1: 11 || OP2: 11 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3175 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3185 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3195 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3205 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 10 || ADD_SUB: 10 || OP1: 11 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3215 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 10 || ADD_SUB: 20 || OP1: 10 || OP2: 10 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3225 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3235 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3245 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3255 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: f || ADD_SUB: 0f || OP1: 10 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3265 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: f || ADD_SUB: 1e || OP1: 0f || OP2: 0f || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3275 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3285 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3295 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3305 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: e || ADD_SUB: 0e || OP1: 0f || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3315 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: e || ADD_SUB: 1c || OP1: 0e || OP2: 0e || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3325 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3335 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3345 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3355 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: d || ADD_SUB: 0d || OP1: 0e || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3365 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: d || ADD_SUB: 1a || OP1: 0d || OP2: 0d || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3375 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3385 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3395 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3405 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: c || ADD_SUB: 0c || OP1: 0d || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3415 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: c || ADD_SUB: 18 || OP1: 0c || OP2: 0c || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3425 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3435 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3445 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3455 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: b || ADD_SUB: 0b || OP1: 0c || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3465 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: b || ADD_SUB: 16 || OP1: 0b || OP2: 0b || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3475 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3485 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3495 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3505 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: a || ADD_SUB: 0a || OP1: 0b || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3515 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: a || ADD_SUB: 14 || OP1: 0a || OP2: 0a || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3525 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3535 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3545 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3555 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 9 || ADD_SUB: 09 || OP1: 0a || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3565 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 9 || ADD_SUB: 12 || OP1: 09 || OP2: 09 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3575 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3585 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3595 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3605 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 8 || ADD_SUB: 08 || OP1: 09 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3615 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 8 || ADD_SUB: 10 || OP1: 08 || OP2: 08 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3625 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3635 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3645 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3655 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 7 || ADD_SUB: 07 || OP1: 08 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3665 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 7 || ADD_SUB: 0e || OP1: 07 || OP2: 07 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3675 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3685 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3695 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3705 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 6 || ADD_SUB: 06 || OP1: 07 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3715 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 6 || ADD_SUB: 0c || OP1: 06 || OP2: 06 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3725 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3735 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3745 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3755 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 5 || ADD_SUB: 05 || OP1: 06 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3765 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 5 || ADD_SUB: 0a || OP1: 05 || OP2: 05 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3775 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3785 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3795 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3805 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 4 || ADD_SUB: 04 || OP1: 05 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3815 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 4 || ADD_SUB: 08 || OP1: 04 || OP2: 04 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3825 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3835 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3845 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3855 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3 || ADD_SUB: 03 || OP1: 04 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3865 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 3 || ADD_SUB: 06 || OP1: 03 || OP2: 03 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3875 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3885 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3895 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3905 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2 || ADD_SUB: 02 || OP1: 03 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3915 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 2 || ADD_SUB: 04 || OP1: 02 || OP2: 02 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3925 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3935 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3945 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3955 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1 || ADD_SUB: 01 || OP1: 02 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3965 ] || OP: JUMP NZ,03A  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 1 || ADD_SUB: 02 || OP1: 01 || OP2: 01 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3975 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 3985 ] || OP: LOAD s0,s0  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 3995 ] || OP: SUB  s2,01  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 4005 ] || OP: STORE s2,(s2)  || ZERO: 0 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 01 || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 1 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 4015 ] || OP: JUMP NZ,03A  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: 00 || OP1: 00 || OP2: 00 || SCR_WR_EN: 1 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 4025 ] || OP: LOAD s0,s0  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 1 || SHIFT_OP: RL_SRX || REG_DATA: 1 || ADD_SUB: ff || OP1: fe || OP2: 01 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 4035 ] || OP: RETURN  || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 1 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# [T: 4045 ] || OP: Invalid Instruction || ZERO: 1 || CARRY: 0 || SHIFT_BIT: 0 || SHIFT_OP: SA || REG_DATA: 0 || ADD_SUB: xx || OP1: xx || OP2: 00 || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# [T: 4055 ] || OP: Invalid Instruction || ZERO: 1 || CARRY: 0 || SHIFT_BIT: x || SHIFT_OP:  || REG_DATA: x || ADD_SUB: xx || OP1: xx || OP2: xx || SCR_WR_EN: 0 || RG_WR_EN: 0 || WR_SRB: 0 || ZR_CR_WR_EN: 0 0
+# Test Program concluded.
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Scratch Pad Mem Values:
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# RAM[0] = 00
+# -------------------------------------------------------------------------------------------------------
+# RAM[1] = 01
+# -------------------------------------------------------------------------------------------------------
+# RAM[2] = 02
+# -------------------------------------------------------------------------------------------------------
+# RAM[3] = 03
+# -------------------------------------------------------------------------------------------------------
+# RAM[4] = 04
+# -------------------------------------------------------------------------------------------------------
+# RAM[5] = 05
+# -------------------------------------------------------------------------------------------------------
+# RAM[6] = 06
+# -------------------------------------------------------------------------------------------------------
+# RAM[7] = 07
+# -------------------------------------------------------------------------------------------------------
+# RAM[8] = 08
+# -------------------------------------------------------------------------------------------------------
+# RAM[9] = 09
+# -------------------------------------------------------------------------------------------------------
+# RAM[10] = 0a
+# -------------------------------------------------------------------------------------------------------
+# RAM[11] = 0b
+# -------------------------------------------------------------------------------------------------------
+# RAM[12] = 0c
+# -------------------------------------------------------------------------------------------------------
+# RAM[13] = 0d
+# -------------------------------------------------------------------------------------------------------
+# RAM[14] = 0e
+# -------------------------------------------------------------------------------------------------------
+# RAM[15] = 0f
+# -------------------------------------------------------------------------------------------------------
+# RAM[16] = 10
+# -------------------------------------------------------------------------------------------------------
+# RAM[17] = 11
+# -------------------------------------------------------------------------------------------------------
+# RAM[18] = 12
+# -------------------------------------------------------------------------------------------------------
+# RAM[19] = 13
+# -------------------------------------------------------------------------------------------------------
+# RAM[20] = 14
+# -------------------------------------------------------------------------------------------------------
+# RAM[21] = 15
+# -------------------------------------------------------------------------------------------------------
+# RAM[22] = 16
+# -------------------------------------------------------------------------------------------------------
+# RAM[23] = 17
+# -------------------------------------------------------------------------------------------------------
+# RAM[24] = 18
+# -------------------------------------------------------------------------------------------------------
+# RAM[25] = 19
+# -------------------------------------------------------------------------------------------------------
+# RAM[26] = 1a
+# -------------------------------------------------------------------------------------------------------
+# RAM[27] = 1b
+# -------------------------------------------------------------------------------------------------------
+# RAM[28] = 1c
+# -------------------------------------------------------------------------------------------------------
+# RAM[29] = 1d
+# -------------------------------------------------------------------------------------------------------
+# RAM[30] = 1e
+# -------------------------------------------------------------------------------------------------------
+# RAM[31] = 1f
+# -------------------------------------------------------------------------------------------------------
+# RAM[32] = 20
+# -------------------------------------------------------------------------------------------------------
+# RAM[33] = 21
+# -------------------------------------------------------------------------------------------------------
+# RAM[34] = 22
+# -------------------------------------------------------------------------------------------------------
+# RAM[35] = 23
+# -------------------------------------------------------------------------------------------------------
+# RAM[36] = 24
+# -------------------------------------------------------------------------------------------------------
+# RAM[37] = 25
+# -------------------------------------------------------------------------------------------------------
+# RAM[38] = 26
+# -------------------------------------------------------------------------------------------------------
+# RAM[39] = 27
+# -------------------------------------------------------------------------------------------------------
+# RAM[40] = 28
+# -------------------------------------------------------------------------------------------------------
+# RAM[41] = 29
+# -------------------------------------------------------------------------------------------------------
+# RAM[42] = 2a
+# -------------------------------------------------------------------------------------------------------
+# RAM[43] = 2b
+# -------------------------------------------------------------------------------------------------------
+# RAM[44] = 2c
+# -------------------------------------------------------------------------------------------------------
+# RAM[45] = 2d
+# -------------------------------------------------------------------------------------------------------
+# RAM[46] = 2e
+# -------------------------------------------------------------------------------------------------------
+# RAM[47] = 2f
+# -------------------------------------------------------------------------------------------------------
+# RAM[48] = 30
+# -------------------------------------------------------------------------------------------------------
+# RAM[49] = 31
+# -------------------------------------------------------------------------------------------------------
+# RAM[50] = 32
+# -------------------------------------------------------------------------------------------------------
+# RAM[51] = 33
+# -------------------------------------------------------------------------------------------------------
+# RAM[52] = 34
+# -------------------------------------------------------------------------------------------------------
+# RAM[53] = 35
+# -------------------------------------------------------------------------------------------------------
+# RAM[54] = 36
+# -------------------------------------------------------------------------------------------------------
+# RAM[55] = 37
+# -------------------------------------------------------------------------------------------------------
+# RAM[56] = 38
+# -------------------------------------------------------------------------------------------------------
+# RAM[57] = 39
+# -------------------------------------------------------------------------------------------------------
+# RAM[58] = 3a
+# -------------------------------------------------------------------------------------------------------
+# RAM[59] = 3b
+# -------------------------------------------------------------------------------------------------------
+# RAM[60] = 3c
+# -------------------------------------------------------------------------------------------------------
+# RAM[61] = 3d
+# -------------------------------------------------------------------------------------------------------
+# RAM[62] = 3e
+# -------------------------------------------------------------------------------------------------------
+# RAM[63] = 3f
+# -------------------------------------------------------------------------------------------------------
+# ===================================================================================================
+# ** Note: $stop    : /home/niko/Downloads/fnlproj-niko-kathy-aalap/team-demo/no_bug_pipelined_picoblaze_hdl/tb_testprogs.sv(349)
+#    Time: 6440 ns  Iteration: 1  Instance: /alt_rojo_tb
+# Break at /home/niko/Downloads/fnlproj-niko-kathy-aalap/team-demo/no_bug_pipelined_picoblaze_hdl/tb_testprogs.sv line 349
+# Stopped at /home/niko/Downloads/fnlproj-niko-kathy-aalap/team-demo/no_bug_pipelined_picoblaze_hdl/tb_testprogs.sv line 349
+# End time: 14:19:43 on Dec 06,2022, Elapsed time: 0:01:04
+# Errors: 0, Warnings: 0

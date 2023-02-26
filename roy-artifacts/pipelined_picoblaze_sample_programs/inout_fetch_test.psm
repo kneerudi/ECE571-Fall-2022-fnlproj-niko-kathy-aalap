@@ -1,0 +1,75 @@
+;--------------------------------------------------------
+; inout_fetch_test.psm - short program to test valid INPUT, OUTPUT, and FETCH operations
+;
+; Author: Seth Rohrbach
+; Modified: March 17, 2020
+;
+; Description:
+; This short program will test a limited set of INPUT, OUTPUT, and FETCH operations. We are using 1 hot encoding and only checking 4 ports
+; because it looks like there are substantial timing issues with INPUT and OUTPUT ops in the RojoBlaze.
+;
+;-------------------------------------------------------
+;
+;====================
+;== Register Names ==
+;====================
+NAMEREG s2, op1
+NAMEREG s3, op2
+NAMEREG s4, res
+NAMEREG s5, dest
+NAMEREG s6, counter
+NAMEREG s7, transf
+;
+;
+;
+;==============
+;=== main() ===
+;==============
+ADDRESS 000
+;
+main:
+    LOAD  op1,   00
+    LOAD  dest,  00     ;point to base of the scratchpad
+    LOAD sA, sA
+;    INPUT res, 01       ;Read from input port 01
+    LOAD sA, sA         ;NOP
+;   STORE res, (dest)
+;    ADD dest, 01
+;    LOAD sA, sA
+;    INPUT res, 02       ;Read from input port 02
+;    LOAD sA, sA         ;NOP
+;    STORE res, (dest)   ;
+;    ADD dest, 01
+    INPUT res, 04       ;Read from input port 04
+    LOAD sA, sA         ;NOP
+    STORE res, (dest)
+    ADD dest, 01
+    INPUT res, 08       ;Read from input port 08
+    LOAD sA, sA         ;NOP
+    STORE res, (dest)
+    LOAD dest, 00       ;Reset back to base scratchpad addr
+    FETCH transf, (dest)
+    ADD dest, 01
+    OUTPUT transf, 01   ;WRITE to OUTPUT port 01
+    LOAD sA, sA         ;NOP
+    FETCH transf, (dest)
+    ADD dest, 01
+    OUTPUT transf, 02   ;WRITE to OUTPUT port 02
+    LOAD sA, sA         ;NOP
+    FETCH transf, (dest)
+    ADD dest, 01
+    OUTPUT transf, 04   ;WRITE to OUTPUT port 04
+    LOAD sA, sA         ;NOP
+    FETCH transf, (dest)
+    ADD dest, 01
+    OUTPUT transf, 08   ;WRITE to OUTPUT port 08
+    LOAD sA, sA         ;NOP
+    LOAD sD, F0
+    STORE sD, 3F        ;WRITE to last RAM location so TB knows we are finished.
+
+endloop:                  ;Lets the pipeline finish
+    LOAD sA, sA           ;NOP
+    JUMP endloop
+    LOAD sA, sA           ;NOP
+    LOAD sA, sA           ;NOP
+    LOAD sB, 44           ;ERROR

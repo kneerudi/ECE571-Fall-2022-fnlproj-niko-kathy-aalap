@@ -1,0 +1,65 @@
+/* Symbol Table */
+// end_program = LABEL: 6
+// initial_value = CONSTANT: 0
+// ram_address = REGISTER: 3
+// ram_data = REGISTER: 2
+// ram_fill = LABEL: 2
+// ram_locations = CONSTANT: 64
+// result = REGISTER: 4
+// s0 = REGISTER: 0
+// s1 = REGISTER: 1
+// s2 = REGISTER: 2
+// s3 = REGISTER: 3
+// s4 = REGISTER: 4
+// s5 = REGISTER: 5
+// s6 = REGISTER: 6
+// s7 = REGISTER: 7
+// s8 = REGISTER: 8
+// s9 = REGISTER: 9
+// sA = REGISTER: 10
+// sB = REGISTER: 11
+// sC = REGISTER: 12
+// sD = REGISTER: 13
+// sE = REGISTER: 14
+// sF = REGISTER: 15
+// start = LABEL: 0
+
+/* Program Code */
+// #1: ;--------------------------------------------------------
+// #2: ; memory_write_test.psm - meant to exercise the pipeline
+// #3: ;
+// #4: ; Author   : Niko Nikolov
+// #5: ; Modified : 12-2-2022
+// #6: ;
+// #7: ; Description :
+// #8: ; Simple driver
+// #9: ;
+// #10: ;-------------------------------------------------------
+// #11: ; Rename Registers
+// #12: ; NAMEREG sX, <name>
+// #13: ;-------------------------------------------------------
+// #14: NAMEREG(s2,ram_data)
+// #15: NAMEREG(s3,ram_address)
+// #16: NAMEREG(s4,result)
+// #18: ; Constnants
+// #19: ; ------------------------------------------------------
+// #20: CONSTANT(initial_value,0) ; Initialize to 0
+// #21: CONSTANT(ram_locations,64) ; There are 64 locationss
+// #22: ; -------------------------------------------------------
+@000 // #23: ADDRESS(0) ; Program always start at reset vector 0
+// #24: ; -------------------------------------------------------
+// @000 #26: [start]
+00340 // @000 #27: LOAD(ram_address,ram_locations) ; Initialize the top ram addr
+00200 // @001 #28: LOAD(ram_data,initial_value) ; Initialize ram data
+// #29: ; -------------------------------------------------------
+// #30: ; Warm up memory before doing any tests
+// #31: ; -------------------------------------------------------
+// @002 #32: [ram_fill]
+1c301 // @002 #33: SUB(ram_address,1) ;
+01230 // @003 #34: LOAD(ram_data,ram_address) ;
+2f230 // @004 #35: STORE(ram_data,ram_address) ;
+35402 // @005 #36: JUMP(NZ,ram_fill) ;
+// #37: ; -------------------------------------------------------
+// @006 #38: [end_program]
+01aa0 // @006 #39: LOAD(sA,sA) ;NOP
+2a000 // @007 #40: RETURN

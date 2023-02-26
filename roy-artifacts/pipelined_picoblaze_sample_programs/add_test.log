@@ -1,0 +1,55 @@
+
+Picoblaze Assembler based on kpicosim  Version 0.2
+Source File: add_test.psm
+
+Line  Addr Instr  Source Code
+   1              ;--------------------------------------------------------
+   2              ; add_test.psm - short program to test valid add operations
+   3              ;
+   4              ; Author: Seth Rohrbach
+   5              ; Modified: March 12, 2020
+   6              ;
+   7              ; Description:
+   8              ; This is a short program to comprehensively exercise all combinations
+   9              ; of the RojoBlaze's ADD operations.
+  10              ; Will test a variety of register and constant parameters.
+  11              ;
+  12              ;-------------------------------------------------------
+  13              ;
+  14              ;====================
+  15              ;== Register Names ==
+  16              ;====================
+  17              NAMEREG s2, op1
+  18              NAMEREG s3, op2
+  19              NAMEREG s4, res
+  20              NAMEREG s5, dest
+  21              NAMEREG s6, counter
+  22              ;
+  23              ;
+  24              ;
+  25              ;==============
+  26              ;=== main() ===
+  27              ;==============
+  28              ADDRESS 000
+  29              ;
+  30              main:
+  31  000  00200      LOAD  op1,   00
+  32  001  00400      LOAD  res,   00     ;set up first operation
+  33  002  00500      LOAD  dest,  00     ;point to base of the scratchpad
+  34  003  19420      ADD   res, op1      ;REG + REG ADD
+  35  004  2f450      STORE res, (dest)   ;Write 00 + 00 to 00 in scratchpad RAM
+  36              ; Doing it manually is fine for testing the first op... lets do a loop for 64 more values though.
+  37  005  0063f    LOAD counter, 3F      ;constants are all hex. 3F = 63, thats how many more writes we need.
+  38  006  00400  loop: LOAD res,  00
+  39  007  18201      ADD  op1,  01         ;As a bonus we get to do even more adds! Using a constant!
+  40  008  18501      ADD  dest, 01
+  41  009  19420      ADD  res,  op1
+  42  00a  2f450      STORE res, (dest)
+  43  00b  1c601      SUB counter, 01       ;And we get to test subtraction with constant! Oh the verification.
+  44  00c  35406      JUMP NZ, loop         ;Return and loop if counter is not zero.
+  45              endloop:                  ;Lets the pipeline finish
+  46  00d  01aa0      LOAD sA, sA           ;NOP
+  47  00e  3400d      JUMP endloop
+  48  00f  01aa0      LOAD sA, sA           ;NOP
+  49  010  01aa0      LOAD sA, sA           ;NOP
+  50  011  00b44      LOAD sB, 44           ;ERROR

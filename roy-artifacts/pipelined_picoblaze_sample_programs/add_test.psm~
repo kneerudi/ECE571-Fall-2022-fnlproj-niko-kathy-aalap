@@ -1,0 +1,50 @@
+;--------------------------------------------------------
+; add_test.psm - short program to test valid add operations
+;
+; Author: Seth Rohrbach
+; Modified: March 12, 2020
+;
+; Description:
+; This is a short program to comprehensively exercise all combinations
+; of the RojoBlaze's ADD operations.
+; Will test a variety of register and constant parameters.
+;
+;-------------------------------------------------------
+;
+;====================
+;== Register Names ==
+;====================
+NAMEREG s2, op1
+NAMEREG s3, op2
+NAMEREG s4, res
+NAMEREG s5, dest
+NAMEREG s6, counter
+;
+;
+;
+;==============
+;=== main() ===
+;==============
+ADDRESS 000
+;
+main:
+    LOAD  op1,   00
+    LOAD  res,   00     ;set up first operation
+    LOAD  dest,  00     ;point to base of the scratchpad
+    ADD   res, op1      ;REG + REG ADD
+    STORE res, (dest)   ;Write 00 + 00 to 00 in scratchpad RAM
+; Doing it manually is fine for testing the first op... lets do a loop for 64 more values though.
+  LOAD counter, 3F      ;constants are all hex. 3F = 63, thats how many more writes we need.
+loop: LOAD res,  00
+    ADD  op1,  01         ;As a bonus we get to do even more adds! Using a constant!
+    ADD  dest, 01
+    ADD  res,  op1
+    STORE res, (dest)
+    SUB counter, 01       ;And we get to test subtraction with constant! Oh the verification.
+    JUMP NZ, loop         ;Return and loop if counter is not zero.
+endloop:                  ;Lets the pipeline finish
+    LOAD sA, sA           ;NOP
+    JUMP endloop
+    LOAD sA, sA           ;NOP
+    LOAD sA, sA           ;NOP
+    LOAD sB, 44           ;ERROR

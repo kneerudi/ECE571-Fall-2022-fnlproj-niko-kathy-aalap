@@ -1,0 +1,222 @@
+/* Symbol Table */
+// add_256_set_zero_ = LABEL: 4
+// add_257_set_carry_addcy_ = LABEL: 8
+// add_addcy_ = LABEL: 12
+// add_reg = REGISTER: 3
+// add_zero_set_zero_ = LABEL: 0
+// and_reg = REGISTER: 6
+// carry = REGISTER: 10
+// clear_carry_bit_ = LABEL: 25
+// compare_reg = REGISTER: 12
+// compare_zero_set_ = LABEL: 35
+// end_ = LABEL: 62
+// gen_all_bits_parity_ = LABEL: 33
+// gen_parity_test_ = LABEL: 30
+// init_ = LABEL: 55
+// initial_value = CONSTANT: 0
+// loop_ = LABEL: 58
+// or_reg = REGISTER: 7
+// ram_address = REGISTER: 2
+// ram_data = REGISTER: 1
+// ram_locations = CONSTANT: 64
+// rotate_left_ = LABEL: 49
+// rotate_reg = REGISTER: 13
+// rotate_right_ = LABEL: 52
+// s0 = REGISTER: 0
+// s1 = REGISTER: 1
+// s2 = REGISTER: 2
+// s3 = REGISTER: 3
+// s4 = REGISTER: 4
+// s5 = REGISTER: 5
+// s6 = REGISTER: 6
+// s7 = REGISTER: 7
+// s8 = REGISTER: 8
+// s9 = REGISTER: 9
+// sA = REGISTER: 10
+// sB = REGISTER: 11
+// sC = REGISTER: 12
+// sD = REGISTER: 13
+// sE = REGISTER: 14
+// sF = REGISTER: 15
+// set_carry_ = LABEL: 27
+// sl0_ = LABEL: 40
+// sl0_reg = REGISTER: 8
+// sl1_ = LABEL: 43
+// sl1_reg = REGISTER: 9
+// sr1_ = LABEL: 46
+// sr1_reg = REGISTER: 9
+// sub_one_from_previous_subcy_ = LABEL: 22
+// sub_one_from_zero_set_carry_ = LABEL: 19
+// sub_reg = REGISTER: 4
+// sub_zero_from_zero_set_zero_ = LABEL: 16
+// test_reg = REGISTER: 11
+// xor_reg = REGISTER: 5
+
+/* Program Code */
+// #1: ;--------------------------------------------------------
+// #2: ; alu_test.psm - test alu
+// #3: ;
+// #4: ; Author   : Niko Nikolov
+// #5: ; Modified : 12-2-2022
+// #6: ;
+// #7: ; Description :
+// #8: ; Alu operations
+// #9: ;
+// #10: ;-------------------------------------------------------
+// #11: ; Rename Registers
+// #12: ; NAMEREG sX, <name>
+// #13: ;-------------------------------------------------------
+// #14: NAMEREG(s1,ram_data)
+// #15: NAMEREG(s2,ram_address)
+// #16: NAMEREG(s3,add_reg)
+// #17: NAMEREG(s4,sub_reg)
+// #18: NAMEREG(s5,xor_reg)
+// #19: NAMEREG(s6,and_reg)
+// #20: NAMEREG(s7,or_reg)
+// #21: NAMEREG(s8,sl0_reg)
+// #22: NAMEREG(s9,sl1_reg)
+// #23: NAMEREG(s9,sr1_reg)
+// #24: NAMEREG(sA,carry)
+// #25: NAMEREG(sB,test_reg)
+// #26: NAMEREG(sC,compare_reg)
+// #27: NAMEREG(sD,rotate_reg)
+// #29: ; Constnants
+// #30: ; ------------------------------------------------------
+// #31: CONSTANT(initial_value,0) ; Initialize to 0
+// #32: CONSTANT(ram_locations,64) ; There are 64 locationss
+// #33: ; -------------------------------------------------------
+@000 // #34: ADDRESS(0) ; Program always start at reset vector 0
+// #35: ; -------------------------------------------------------
+// #36: ; -------------------------------------------------------
+// #37: ; Arithmentic Instructions
+// #38: ; if the resulting sum is either
+// #39: ; 0 or 256 (register sX is zero with CARRY set), then the ZERO flag is set.
+// @000 #40: [add_zero_set_zero_]
+00300 // @000 #41: LOAD(add_reg,0) ; Initialize to 0
+18300 // @001 #42: ADD(add_reg,0) ; Add 0 to result
+01000 // @002 #43: LOAD(s0,s0) ; NOP
+34004 // @003 #44: JUMP(add_256_set_zero_) ;
+// #45: ;--------------------------------------------------------
+// @004 #46: [add_256_set_zero_]
+00300 // @004 #47: LOAD(add_reg,0) ; Initialize to 0
+18300 // @005 #48: ADD(add_reg,256) ; Add 256 (0x100) to result
+01000 // @006 #49: LOAD(s0,s0) ; NOP
+34008 // @007 #50: JUMP(add_257_set_carry_addcy_) ;
+// #51: ;--------------------------------------------------------
+// @008 #52: [add_257_set_carry_addcy_]
+003ff // @008 #53: LOAD(add_reg,FF) ; Add FF 255 to result
+18301 // @009 #54: ADD(add_reg,1) ;
+01000 // @00a #55: LOAD(s0,s0) ; NOP
+3400c // @00b #56: JUMP(add_addcy_)
+// #57: ;--------------------------------------------------------
+// @00c #58: [add_addcy_]
+003ff // @00c #59: LOAD(add_reg,FF) ; Add 255 to result
+1a301 // @00d #60: ADDCY(add_reg,1) ; Next clock cycle Carry should be 1
+01000 // @00e #61: LOAD(s0,s0) ; NOP
+34010 // @00f #62: JUMP(sub_zero_from_zero_set_zero_) ;
+// #63: ;--------------------------------------------------------
+// #64: ; The resulting operation affects both the CARRY and ZERO
+// #65: ; flags. If the resulting difference is less than 0, then the CARRY flag is set. If the resulting
+// #66: ; difference is 0 or -256, then the ZERO flag is set.
+// #67: ; The SUBCY instruction is a subtract operation with borrow. If the CARRY flag is set, then
+// #68: ; SUBCY subtracts an additional one from the resulting difference.
+// #69: ;--------------------------------------------------------
+// @010 #70: [sub_zero_from_zero_set_zero_]
+00400 // @010 #71: LOAD(sub_reg,0) ; Initialize to 0
+1c400 // @011 #72: SUB(sub_reg,0) ;
+34013 // @012 #73: JUMP(sub_one_from_zero_set_carry_) ;
+// #74: ;--------------------------------------------------------
+// @013 #75: [sub_one_from_zero_set_carry_]
+00400 // @013 #76: LOAD(sub_reg,0) ; Initialize to 0
+1c401 // @014 #77: SUB(sub_reg,1) ; Next clock cycle Carry should 1
+34016 // @015 #78: JUMP(sub_one_from_previous_subcy_) ;
+// #79: ;--------------------------------------------------------
+// #80: ; The SUBCY instruction is a subtract operation with borrow. If the CARRY flag is set, then
+// #81: ; SUBCY subtracts an additional one from the resulting difference.
+// #82: ;--------------------------------------------------------
+// @016 #83: [sub_one_from_previous_subcy_]
+00400 // @016 #84: LOAD(sub_reg,0) ; Initialize to 0
+1e401 // @017 #85: SUBCY(sub_reg,1) ; Carry should have been asserted above hence sub 2 (carry)
+34019 // @018 #86: JUMP(clear_carry_bit_) ;
+// #87: ;--------------------------------------------------------
+// @019 #88: [clear_carry_bit_]
+0b440 // @019 #89: AND(sub_reg,sub_reg) ; Clear carry bit
+3401b // @01a #90: JUMP(set_carry_) ;
+// #91: ;--------------------------------------------------------
+// @01b #92: [set_carry_]
+00a00 // @01b #93: LOAD(carry,0) ; Set Carry
+14a01 // @01c #94: COMPARE(carry,1) ; Reset Zero flag
+3401e // @01d #95: JUMP(gen_parity_test_) ;
+// #97: ;--------------------------------------------------------
+// @01e #98: [gen_parity_test_]
+00b05 // @01e #99: LOAD(test_reg,5) ; 00000101
+12b04 // @01f #100: TEST(test_reg,4) ; Carry = 1, ZERO = 0
+34021 // @020 #101: JUMP(gen_all_bits_parity_) ;
+// #102: ;--------------------------------------------------------
+// @021 #103: [gen_all_bits_parity_]
+120ff // @021 #104: TEST(s0,FF) ; Include all bit in parity gen
+34023 // @022 #105: JUMP(compare_zero_set_) ;
+// #106: ;--------------------------------------------------------
+// #107: ; The COMPARE instruction performs an 8-bit subtraction of two operands but only affects
+// #108: ; the ZERO and CARRY flags
+// #109: ;--------------------------------------------------------
+// @023 #110: [compare_zero_set_]
+00c00 // @023 #111: LOAD(compare_reg,0) ; Set to 0
+14c00 // @024 #112: COMPARE(compare_reg,0) ; Set the Zero flag
+01000 // @025 #113: LOAD(s0,s0) ; NOP
+14c01 // @026 #114: COMPARE(compare_reg,1) ; Set Carry Flag
+34028 // @027 #115: JUMP(sl0_) ;
+// #117: ; -------------------------------------------------------
+// #118: ; All shift instructions affect the
+// #119: ; CARRY and ZERO flags.
+// #120: ; -------------------------------------------------------
+// #121: ; The SL0 sX instruction shift the contents of register sX
+// #122: ; left by one bit position.
+// @028 #123: [sl0_]
+008ff // @028 #124: LOAD(sl0_reg,FF) ;
+20806 // @029 #125: SL0(sl0_reg) ;
+3402b // @02a #126: JUMP(sl1_) ;
+// #127: ;--------------------------------------------------------
+// #128: ; The SL1 and SR1 shift instructions are similar to SL0 and
+// #129: ; SR0 except that the empty bit
+// #130: ; location is filled with a 1
+// #131: ;--------------------------------------------------------
+// @02b #132: [sl1_]
+009ff // @02b #133: LOAD(sl1_reg,FF) ;
+20907 // @02c #134: SL1(sl1_reg) ;
+3402e // @02d #135: JUMP(sr1_) ;
+// #136: ;--------------------------------------------------------
+// @02e #137: [sr1_]
+00901 // @02e #138: LOAD(sr1_reg,1) ; Load 1  and shift rign
+2090f // @02f #139: SR1(sr1_reg) ;
+34031 // @030 #140: JUMP(rotate_left_) ;
+// #141: ;--------------------------------------------------------
+// #142: ; The rotate instructions, shown in Table 3-5, rotate the
+// #143: ; contents of the specified register left
+// #144: ; or right. The RL sX instruction shifts the contents of register sX
+// #145: ; left with the most-significant bit, bit 7,
+// #146: ; feeding the least-significant bit, bit 0
+// #147: ;--------------------------------------------------------
+// @031 #148: [rotate_left_]
+00dff // @031 #149: LOAD(rotate_reg,FF) ;
+20d02 // @032 #150: RL(rotate_reg) ; Rotate left
+34034 // @033 #151: JUMP(rotate_right_) ; rotate
+// #152: ;--------------------------------------------------------
+// @034 #153: [rotate_right_]
+00dff // @034 #154: LOAD(rotate_reg,FF) ;
+20d0c // @035 #155: RR(rotate_reg) ; Rotate Right
+34037 // @036 #156: JUMP(init_) ;
+// #157: ;-------------------------------------------------------
+// @037 #158: [init_]
+00240 // @037 #159: LOAD(ram_address,ram_locations) ; Initialize the top ram addr
+00100 // @038 #160: LOAD(ram_data,initial_value) ; Initialize ram data
+3403a // @039 #161: JUMP(loop_) ;
+// #162: ;--------------------------------------------------------
+// @03a #163: [loop_]
+01000 // @03a #164: LOAD(s0,s0) ; NOP
+1c201 // @03b #165: SUB(ram_address,1) ;
+2f220 // @03c #166: STORE(ram_address,ram_address) ;
+3543a // @03d #167: JUMP(NZ,loop_) ;
+// @03e #169: [end_]
+01000 // @03e #170: LOAD(s0,s0) ; NOP
+2a000 // @03f #171: RETURN

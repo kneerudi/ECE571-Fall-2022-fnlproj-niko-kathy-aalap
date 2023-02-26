@@ -1,0 +1,78 @@
+/* Symbol Table */
+// counter = REGISTER: 6
+// dest = REGISTER: 5
+// endloop = LABEL: 13
+// loop = LABEL: 6
+// main = LABEL: 0
+// op1 = REGISTER: 2
+// op2 = REGISTER: 3
+// res = REGISTER: 4
+// s0 = REGISTER: 0
+// s1 = REGISTER: 1
+// s2 = REGISTER: 2
+// s3 = REGISTER: 3
+// s4 = REGISTER: 4
+// s5 = REGISTER: 5
+// s6 = REGISTER: 6
+// s7 = REGISTER: 7
+// s8 = REGISTER: 8
+// s9 = REGISTER: 9
+// sA = REGISTER: 10
+// sB = REGISTER: 11
+// sC = REGISTER: 12
+// sD = REGISTER: 13
+// sE = REGISTER: 14
+// sF = REGISTER: 15
+
+/* Program Code */
+// #1: ;--------------------------------------------------------
+// #2: ; add_test.psm - short program to test valid add operations
+// #3: ;
+// #4: ; Author: Seth Rohrbach
+// #5: ; Modified: March 12, 2020
+// #6: ;
+// #7: ; Description:
+// #8: ; This is a short program to comprehensively exercise all combinations
+// #9: ; of the RojoBlaze's ADD operations.
+// #10: ; Will test a variety of register and constant parameters.
+// #11: ;
+// #12: ;-------------------------------------------------------
+// #13: ;
+// #14: ;====================
+// #15: ;== Register Names ==
+// #16: ;====================
+// #17: NAMEREG(s2,op1)
+// #18: NAMEREG(s3,op2)
+// #19: NAMEREG(s4,res)
+// #20: NAMEREG(s5,dest)
+// #21: NAMEREG(s6,counter)
+// #22: ;
+// #23: ;
+// #24: ;
+// #25: ;==============
+// #26: ;=== main() ===
+// #27: ;==============
+@000 // #28: ADDRESS(0)
+// #29: ;
+// @000 #30: [main]
+00200 // @000 #31: LOAD(op1,0)
+00400 // @001 #32: LOAD(res,0) ;set up first operation
+00500 // @002 #33: LOAD(dest,0) ;point to base of the scratchpad
+19420 // @003 #34: ADD(res,op1) ;REG + REG ADD
+2f450 // @004 #35: STORE(res,dest) ;Write 00 + 00 to 00 in scratchpad RAM
+// #36: ; Doing it manually is fine for testing the first op... lets do a loop for 64 more values though.
+0063f // @005 #37: LOAD(counter,63) ;constants are all hex. 3F = 63, thats how many more writes we need.
+// @006 #38: [loop]
+00400 // @006 #38: LOAD(res,0)
+18201 // @007 #39: ADD(op1,1) ;As a bonus we get to do even more adds! Using a constant!
+18501 // @008 #40: ADD(dest,1)
+19420 // @009 #41: ADD(res,op1)
+2f450 // @00a #42: STORE(res,dest)
+1c601 // @00b #43: SUB(counter,1) ;And we get to test subtraction with constant! Oh the verification.
+35406 // @00c #44: JUMP(NZ,loop) ;Return and loop if counter is not zero.
+// @00d #45: [endloop] ;Lets the pipeline finish
+01aa0 // @00d #46: LOAD(sA,sA) ;NOP
+3400d // @00e #47: JUMP(endloop)
+01aa0 // @00f #48: LOAD(sA,sA) ;NOP
+01aa0 // @010 #49: LOAD(sA,sA) ;NOP
+00b44 // @011 #50: LOAD(sB,68) ;ERROR

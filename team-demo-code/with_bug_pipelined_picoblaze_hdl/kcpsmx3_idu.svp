@@ -1,0 +1,118 @@
+/*
+	Copyright (c) 2004 Pablo Bleyer Kocik.
+
+    Modified for EE573 Fall 2005 by John Lynch, OGI/OHSU
+
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
+
+	1. Redistributions of source code must retain the above copyright notice, this
+	list of conditions and the following disclaimer.
+
+	2. Redistributions in binary form must reproduce the above copyright notice,
+	this list of conditions and the following disclaimer in the documentation
+	and/or other materials provided with the distribution.
+
+	3. The name of the author may not be used to endorse or promote products
+	derived from this software without specific prior written permission.
+
+	THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+	WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+	MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+	EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+	SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+	PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+	BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+	IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+	POSSIBILITY OF SUCH DAMAGE.
+
+    Behavioral KCPSMX instruction decode unit.
+	
+	Acknowledgment:  SystemVerilog version created and tested by SethR, MilesS, 
+	ShubhankaSPM, and Supraj Vastrad for ECE 571 Winter 2020 final project
+*/
+
+import kcpsmx3_inc::*;
+
+module kcpsmx_idu(
+	instruction,
+	operation,
+	shift_operation, shift_direction, shift_constant,
+	operand_selection,
+	x_address, y_address,
+	implied_value, port_address,
+	scratch_address,
+	code_address,
+	conditional, condition_flags,
+	interrupt_enable
+);
+`pragma protect begin_protected
+`pragma protect version = 1
+`pragma protect encrypt_agent = "QuestaSim" , encrypt_agent_info = "2019.2_1"
+`pragma protect key_keyowner = "Mentor Graphics Corporation" , key_keyname = "MGC-VERIF-SIM-RSA-2"
+`pragma protect key_method = "rsa"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 256 )
+`pragma protect key_block
+QFgGcRD0+Ss7x7FR+EVXJ9DGdwnUTkZZayzkCA2EHWARSMG2rj88bELb7hko6JRm
+3aPT5sVk19Knqdu4Lf9pEHU3Jn0CijM9uHvHMHvyQRLT3kdxb/rN68lZWaj+HtZl
+HVWvtKhuWwwBbGKKR4FnQypesNCKHnfV0PR8r2iX9V5YfAuWHjkzUF//KJLpqiYL
+WTbDyQwq3iYN7U0uyKbbVpEyDcbl2h5+Pe9Fqeo5WRtnoyp8q8wGF2q+eSiMlWOY
+9jxIMFE0XJN6MSAWl/T5WdIKQlSmc5o0eF3WFWiOgDA8aSOPvryrolBxbSqCeQyH
+P8L+WL3dAk7EQGknn4SxTA==
+`pragma protect data_method = "aes128-cbc"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 2416 )
+`pragma protect data_block
+a8tcelQ5eCoNv3leh796lXeqH+CYfw6VDUVD/u27SB+vLO8PBUQaBNdeTEGMRnaa
+Q/t/l2zBkya5gcWZIlDtUBC3KhGOd3WVVNDktt3+OjgbiUOkNZ43TmFIKPhVpLY9
+AjJEhdTbiD8yt2xTdXcS53MVoC3MoKsSXdrk79gfe5ajxY6JV0ZWgaVWfObG7TM7
+lfYdIuJLlJ2NT6F9pL7DnR74rom0ZjMOyu33ArRfTDf05bxA5TOkoDEC0n9e6QNC
+Q3L9E4Yb564ep/Kw3lrfAZooeOkYqIgC10O7ak37ceZcLe0d69cCv2vny9oQOl0n
+caGgz9ziwn6akCAzX4DMrAD1ANOLorLEQqKbIGrfQc6i+oi7CJSUVDfbWg66CzEU
+8EwAa2gkmQIUFhL5Bbin9Tp7SzlnirJWwefTgdwPBQKif9CwxghdcBJ4ohjHV7qm
+GT+S1X6SnMAgKdfERVxvxdGU8snXxzbWE/sc7Bysmhgn81+ZGxDoviH/pmprbhmE
+eYPB0qfpfoATMLw9ImzBkG4BDE256xFjCmC65fe1U6NLmXFBwIGeeIBPeJFsBqAH
+fXBfO1KTpos3J/1La6aexzfsIbI1l2SGvtXxkOsi7rK6e2FkBkt5HyVZwQT+AxeG
+F/Wg57s/ajZ9rqTmocl6Ol7u9Chk4g85oiK6ESl9HHjrjEq2+ZdOCK+BdyTW4zlW
+3E8d8MsHelTLsnBv7JCCizCwRXDdQdCNQKJbsJEA0KriaF+p+R82R3h7mkEXvzIq
+9LZ5nyGO3t24kQ2WG99+0PX0RJ+AqjC14IMv+zmy/uSInLfLHKTIU3IFbGLU7YRJ
+WSHQt34Q+f5YJ1HySlW0EWcBd5kovRaZ2fBJt/Oux5ZVOVMvN6lnOe+lnJ8tPUvF
+mwQRk5xNEoBxc8dpMzvQBYi9Heq35StGlg+A8W/LKcgxul9XHqsrkfPMyLsc+QD9
+fOey+e89rML0mekvHOLcyVmiUTOtcGybDDKp8cI766ELVuHX4fbe6lSyvJ90MJrn
+QngJxPPlwhxllIFR1bocgOVMuLcIKeJQHqeNGjEOnxq6J4B9Qv32imLLA65rv+tW
+tmc5Hwbdd8pKKFnjfaII0qUEiOw0Y8bJns6/MyEOAnN+hru491ho6rKa3f+fkWcG
+vkfofxcJcDV21cMf9yb7P/uZSEUEOItJpfcb+XG/bkRxNvPqlLIURvES1G6WZHh8
+kDjoCGIUwCeKmzdJiXSMG0+e5cdBHO+ktgqo7eObgzy5bH2EJlyjd8Adco23Q+1m
+Vut1MES51PzWq+GwFmuMD5WlpazKY8+kb4Yj6BWQn++iUi4j8IFEYdSnbUXDcv/Q
+pSvUzrbdU12doVUT/jrLpM/XwbAubWLS4kIfd8qK7c+GTirD9rgNT+N1NzWB6jyY
+aErmh2FYMYwYEhT8aebMXWwcK+NtswJ9bCyZgKq45sx0UrC0ciogfbAuZJF6dVDP
+3kDZnFPitOwnsIXQEbg1qrNAMFrjp/0dBacKs9pNsSvZgr3vXhh2pWEGCoDp46Bh
+FVvm0sSacTyeF8Pcyh6J3oxbCBS6t9rmE5MxWPE5EZ8u5mHwp1z00CcYlAJ0RKrK
+M3k7g4VeSdu011/0Ixj/5UcSg6Nlr53Czp8L/Qg6VI+lIk5fl/hHP4ah2L1tH9sB
+ZDJFZzHHa7N/jqX+nmOOAFj0aey+E7sxOenv2tIuCpcTj/ZgQp/1hdERg16dA9Ji
+Jbslrt1eqvJ7M06HH18Wb+/jlU6X49N+v76lj5O/tNmjmDUQUYliPTs4AKLPC5SD
+sS134evdA275Ngwn3C4RL9u0nhaaa7R/mu9Fk/FdhG/1I5SU44UIIomn24NCdoM4
+4EA4JeqTxlvciBb5uiSnGWOvLnLV/lSwti+cEfa6JdyW4FTW4HDLveeeEoTd0AuH
+6gym6ieER0H1vkXM1O5qfJJRrY/HOghvnRfwuZjzU1A6eIW6wj7hbDW2MlZWTSvI
+nSKGXGtaSQh73DVUcsLPpnDFC3aX7Su0rMmXuq/hce5kcNM/xPBjEzeEkZPcisA7
+ey7C31wxof/ZfdfDru88zJ+MMwwPTCUXrNc6xaWNJeO2G9eP5mcVpi0yLvWk5W+u
+vsa5lyEjpZ52I2v8IVqbZXgpJnGn8lXswXiuUuF2oJaBlWDyUg6PAEr5XLVBAFVv
+PNug8R8qnA+fDTV9TRXei9Ep2qPAe1Mb2RQfjFIqEwefMw9jltddOnnqWX4qgG5a
+y4rxEGRfLQQQa4jDOc60p3J+0da/9McfFHUELR7BcK4nRVtGzBOnUxSV6V+SF8Hc
+ijYJex0A7NMBVVTnLyiABgxWzDyBvMV7y3siXKHN9jDkYdgPnFHuP5uYrTe/X0tD
+5kB6l6ZLLhgfkR8dU5Rf+NdUk5a0/jf0Qilp4Fi9I8ZOZlEbWBlubrbWRzG3I8s2
+7BF5nUkMmNwOjafJR/U+3UYW4oofaYYDXqan2Yb+ZKY5G8/NYtnvfbB/GmWiAR9u
+jI+PBVQ5k/h0K9q8eljTv60LXKEhz/19gFbv4t4NDtLrsQkzaTvlK4/dh4b9w8mm
+9Cad+RdSmTyP8OXvsjWK9rBO8UQmxTQ/58+SaAPHgkIR6wQ52bFroceLdBMDUuBS
+d1mg9o6W04Rzefv4lwBALlsddc9VOTeRnyKzpGKUK05OrQs5/R/atk+V0xw09Nj5
+DmibLDX9V1+Eu0HdeVizHXxykJ+6acRoBzc+GGZu3c9YQ4ZdtHTqBpIAYf/o+Iew
+S4SFaqqIwQljem2aJ9P1RBXHVjRRme/eogkzjSwLztx9buvmZn6N7blB2UIJ08PB
+7X+nT1pPpP57FwW2pyAjZOPGNOok/lGc3e5ZcqGfZpVknpmVFhwtdDIQwQNy+MXV
+X5sbNdVjA7f+oGPuWOKaj+0SqH//zgg1/uPvKsAIiuyhtAFBiHURANsVKIMXnz9R
+de4YUjY+/9YhS8wz++E1ryvCtGGR2dJhXyU7PwsDbLLB0icYfHB7YoVdV9/QRloX
+vrNDyldO7oH8bVVB6qBJCvtgAjopV/dF2JAmkAb5OfbewPSr9dfk15acHW1ffUox
+ifyTBjdIFAjaDJsmZJEIi446EHBsVdnkecEQ708aNe2Ci1AF+UN4gKvJvVYPpouM
+xdL0+XPwdEAy6OEyXZTvd/nkkZiZKHdGPkRkh/0+KNWQRpe68XqepVQ+LlhSRWXF
+eyLL9Ia4Tvx+vexnTNcIUQ==
+`pragma protect end_protected
+endmodule

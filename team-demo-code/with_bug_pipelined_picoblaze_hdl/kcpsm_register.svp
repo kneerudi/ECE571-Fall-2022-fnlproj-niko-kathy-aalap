@@ -1,0 +1,71 @@
+/*
+    Copyright (c) 2004 Pablo Bleyer Kocik.
+ 
+    Modified for EE573 Fall 2005 by John Lynch, OGI/OHSU
+        Added independent write address input
+
+    Modified by Miles Simpson (mil32@pdx.edu) on March 9, 2020
+    Updated to SystemVerilog, making use of kcpsmx3_inc package defintions
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are met:
+
+    1. Redistributions of source code must retain the above copyright notice, this
+    list of conditions and the following disclaimer.
+
+    2. Redistributions in binary form must reproduce the above copyright notice,
+    this list of conditions and the following disclaimer in the documentation
+    and/or other materials provided with the distribution.
+
+    3. The name of the author may not be used to endorse or promote products
+    derived from this software without specific prior written permission.
+
+    THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+    EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+    BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+    IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+    POSSIBILITY OF SUCH DAMAGE.
+
+        Behavioral KCPSMX 16-location register file
+		
+	Acknowledgment:  SystemVerilog version created and tested by SethR, MilesS, ShubhankaSPM, and Supraj Vastrad for ECE 571 Winter 2020 final project
+*/
+
+import kcpsmx3_inc::*;
+
+module kcpsmx_register(
+    input clk, reset, w_write_enable,
+    input  [REGISTER_DEPTH-1:0] w_address, x_address, y_address,
+    input  [REGISTER_WIDTH-1:0] w_data_in,
+    output [REGISTER_WIDTH-1:0] x_data_out, y_data_out
+);
+`pragma protect begin_protected
+`pragma protect version = 1
+`pragma protect encrypt_agent = "QuestaSim" , encrypt_agent_info = "2019.2_1"
+`pragma protect key_keyowner = "Mentor Graphics Corporation" , key_keyname = "MGC-VERIF-SIM-RSA-2"
+`pragma protect key_method = "rsa"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 256 )
+`pragma protect key_block
+dXtHkEj//xAXlvVW5DdUl0b/p7R6jwEjZE7dg3SsnwGTsoJDw+AhRF487rIFmeEs
+5DUZpNlas5JLtE/P8CtW6eyhHUg5XGrYNA9IaTx9Q2sBgkZOZcldJWTLS9M/WDn+
+d2g3NMbcHSknTZGTHEyNvS3u8Iyk4ebiELN/pSZUTqLsa++Cz+MSjgVogzl83D6l
+bvuWZKzvxB+bYgQKlAGc8xN1QYLDEy+EeENGufrgg8UroXU2owF8GO4H8h2OGJ9s
+X39B32vfcjyvp8YVr0JB4EAM0G4uHzkgxaSdJnJlRiIuqvGxaeVDgF5YXAzA2U7y
+pFGprPwfnaHmKA/zecUfQQ==
+`pragma protect data_method = "aes128-cbc"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 304 )
+`pragma protect data_block
+E7ei1V0EEyHFarMr4SFo13IAQMnbOaC2yfJ2x6ZveMwTgo4DwUrZx/XC+eghnOwj
+OndXPM298p5guMyLaAlgy8k41s/Kp9vROZMrrPR0LUb8rT6cjavLKOSr23y5GhRW
+uBwUpdnWzy35YosIoS4pSYo5A4BGi+rsxx9l9dU0sQl2gFJlPC/mOHCCu7ccoisE
+zmFANEZpcP7ylSn+VOWH88ohXNu9Cl0Wqgu2TDDymEdd4avz+gCkj0TwRMTsC17f
+uo05vxdSjBzk1JdQeETJQoahw6F8eULxEa7F2GJ8gpHv9Mae/fDrF2yatMVCxFAJ
+fvIJ31qLOO2sayZejR9FPDkc8lkHP1eOTgekKvtrd2o3FlQH8Vg7bKGo/M3Mt/41
+Xb1f6gGAdiB8kaLyxm2ClQ==
+`pragma protect end_protected
+endmodule

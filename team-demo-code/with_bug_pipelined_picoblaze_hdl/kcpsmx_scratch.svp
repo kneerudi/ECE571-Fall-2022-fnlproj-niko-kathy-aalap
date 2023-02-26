@@ -1,0 +1,71 @@
+/*
+	Copyright (c) 2004 Pablo Bleyer Kocik.
+
+    Modified for EE573 Fall 2005 by John Lynch, OGI/OHSU
+
+	Redistribution and use in source and binary forms, with or without
+	modification, are permitted provided that the following conditions are met:
+
+	1. Redistributions of source code must retain the above copyright notice, this
+	list of conditions and the following disclaimer.
+
+	2. Redistributions in binary form must reproduce the above copyright notice,
+	this list of conditions and the following disclaimer in the documentation
+	and/or other materials provided with the distribution.
+
+	3. The name of the author may not be used to endorse or promote products
+	derived from this software without specific prior written permission.
+
+	THIS SOFTWARE IS PROVIDED BY THE AUTHOR "AS IS" AND ANY EXPRESS OR IMPLIED
+	WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+	MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO
+	EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+	SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+	PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+	BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
+	IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+	ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+	POSSIBILITY OF SUCH DAMAGE.
+
+    Behavioral KCPSMX 64-location scratchpad RAM.
+	
+	Acknowledgment:  SystemVerilog version created and tested by SethR, MilesS,
+	ShubhankaSPM, and Supraj Vastrad for ECE 571 Winter 2020 final project
+*/
+
+
+import kcpsmx3_inc::*;
+
+module kcpsmx_scratch(
+	address, write_enable, data_in, data_out,
+	reset, clk
+);
+`pragma protect begin_protected
+`pragma protect version = 1
+`pragma protect encrypt_agent = "QuestaSim" , encrypt_agent_info = "2019.2_1"
+`pragma protect key_keyowner = "Mentor Graphics Corporation" , key_keyname = "MGC-VERIF-SIM-RSA-2"
+`pragma protect key_method = "rsa"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 256 )
+`pragma protect key_block
+TXjCt3yCOPSuntqcfkN9Y2aYp5QcfhKOhR/NZVfxkYSuQtdNV/H9D9GvxZoB9wuj
+3Nc30f1J/wZtLVbybOtMezUkApg8Y90uGpbjtpt2A62cJ7FDisRCr/LFxZAXiKKf
+KnNc4AJdCn9X7uoxdpoLWnVasQ7atuFfGr6FlranoJeIR5DAEnX+gPwPXYUzJ8K1
+enNfnRBG9UMbRkkPksII+fdGtvbAupRO4QMEbkHSe+EQ5MlUPNwmF3KH0ptmkLjy
+VU0E5DYOk3UIsOqLuW68EqVYKpLGvgznGIjB7DIPhfSZnTqfRCFdC3V4bQnQ/Rxq
+HlD1UdtKBhvBPJ06mF5yug==
+`pragma protect data_method = "aes128-cbc"
+`pragma protect encoding = ( enctype = "base64" , line_length = 64 , bytes = 528 )
+`pragma protect data_block
+glKytX4mPJHSYjM/+MqaCyqgosc48B2/leYSmv4kCv5Jc0UT+LbsM/zhqVTJC1Il
+Cjz8jj6NQcwIfiVTDew70v/MA+3hNQcVTyEnMoMmt2uZudjNDOzDb4XToo96+4Pw
+uBShKYzmGK45cmX7He+nucwaBR1KrxulJl35mLNSYf+diB65qIkdY1kFuU0xe7HF
+ZJjbPGLy5LbbWTo4btzeo/qhznuotrzBg90IFw7WMFY3UIcWRUYTDn/mKMzNnCC7
+E8oGTbqr3ftZF74T/0SLj5HWsMJGSkLUCw4S4t+K/h4kmyaDwmJelVzT4SVCGaIY
+9v5AZQVXpTjq2PUrKa8iNwqa6019Ogx1meWqES9CWpNlQnVEd+kEVcu6YmRTdMjk
+o76SZDDqpAVKxEYmxdIggZNt4/QSH8vre3TLbo5i+6xjvgg6tXh4npEFvuBSOSiI
+B6NfcuHT4Y6lUUfQG9Zat/nfslRnmQd+G9e1/k199Fi3PGz9OUqt1w37qPbXjIPR
+xCZ0PE3Xs0J+Q2AGndkI1yzBp7lWcl6/LzcCpzbDSrz+9XIUZ9gaBbckxfNJ9MEb
+c7bmU236WAmuy8o26uskP+BP22YAY6Wz52sJQ1DD6fNYFojKolqAewsOfenGtfPc
+98IhfTD0TwwpiBubM0UYShiXuAgV6B1X8NCh7sMqJxGZbx9zpHlbG5kjipTcBwQj
+`pragma protect end_protected
+endmodule
