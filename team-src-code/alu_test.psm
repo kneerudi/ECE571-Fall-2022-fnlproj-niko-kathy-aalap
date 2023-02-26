@@ -1,0 +1,172 @@
+;--------------------------------------------------------
+; alu_test.psm - test alu
+;
+; Author   : Niko Nikolov
+; Modified : 12-2-2022
+;
+; Description :
+; Alu operations
+;
+;-------------------------------------------------------
+; Rename Registers
+; NAMEREG sX, <name>
+;-------------------------------------------------------
+NAMEREG s1, ram_data
+NAMEREG s2, ram_address
+NAMEREG s3, add_reg
+NAMEREG s4, sub_reg
+NAMEREG s5, xor_reg
+NAMEREG s6, and_reg
+NAMEREG s7, or_reg
+NAMEREG s8, sl0_reg
+NAMEREG s9, sl1_reg
+NAMEREG s9, sr1_reg
+NAMEREG sA, carry
+NAMEREG sB, test_reg
+NAMEREG sC, compare_reg
+NAMEREG sD, rotate_reg
+
+; Constnants
+; ------------------------------------------------------
+CONSTANT initial_value  , 00                           ; Initialize to 0
+CONSTANT ram_locations  , 40                           ; There are 64 locationss
+; -------------------------------------------------------
+ADDRESS 000 ; Program always start at reset vector 0
+; -------------------------------------------------------
+; -------------------------------------------------------
+; Arithmentic Instructions
+; if the resulting sum is either
+; 0 or 256 (register sX is zero with CARRY set), then the ZERO flag is set.
+add_zero_set_zero_:
+    LOAD add_reg            , 00                         ; Initialize to 0
+    ADD  add_reg            , 00                         ; Add 0 to result
+    LOAD s0  , s0 ; NOP
+    JUMP add_256_set_zero_;
+;--------------------------------------------------------
+add_256_set_zero_:
+    LOAD add_reg            , 00                         ; Initialize to 0
+    ADD  add_reg            , 100                        ; Add 256 (0x100) to result
+    LOAD s0  , s0 ; NOP
+    JUMP add_257_set_carry_addcy_;
+;--------------------------------------------------------
+add_257_set_carry_addcy_:
+    LOAD    add_reg         , FF                         ; Add FF 255 to result
+    ADD add_reg             , 1                          ;
+    LOAD s0  , s0 ; NOP
+    JUMP add_addcy_
+;--------------------------------------------------------
+add_addcy_:
+    LOAD    add_reg         , FF                         ; Add 255 to result
+    ADDCY   add_reg         , 01                         ; Next clock cycle Carry should be 1
+    LOAD s0  , s0 ; NOP
+    JUMP sub_zero_from_zero_set_zero_;
+;--------------------------------------------------------
+; The resulting operation affects both the CARRY and ZERO
+; flags. If the resulting difference is less than 0, then the CARRY flag is set. If the resulting
+; difference is 0 or -256, then the ZERO flag is set.
+; The SUBCY instruction is a subtract operation with borrow. If the CARRY flag is set, then
+; SUBCY subtracts an additional one from the resulting difference.
+;--------------------------------------------------------
+sub_zero_from_zero_set_zero_:
+    LOAD sub_reg            , 00                      ; Initialize to 0
+    SUB  sub_reg            , 00                      ;
+    JUMP sub_one_from_zero_set_carry_;
+;--------------------------------------------------------
+sub_one_from_zero_set_carry_:
+    LOAD sub_reg            , 00                       ; Initialize to 0
+    SUB  sub_reg            , 01                       ; Next clock cycle Carry should 1
+    JUMP sub_one_from_previous_subcy_                  ;
+;--------------------------------------------------------
+; The SUBCY instruction is a subtract operation with borrow. If the CARRY flag is set, then
+; SUBCY subtracts an additional one from the resulting difference.
+;--------------------------------------------------------
+sub_one_from_previous_subcy_:
+    LOAD sub_reg            , 00                       ; Initialize to 0
+    SUBCY  sub_reg          , 01                        ; Carry should have been asserted above hence sub 2 (carry)
+    JUMP clear_carry_bit_;
+;--------------------------------------------------------
+clear_carry_bit_:
+    AND sub_reg         , sub_reg                       ; Clear carry bit
+   JUMP set_carry_                                      ;
+;--------------------------------------------------------
+set_carry_:
+    LOAD carry          , 00                             ; Set Carry
+    COMPARE carry       , 01                             ; Reset Zero flag
+    JUMP gen_parity_test_                                ;
+
+;--------------------------------------------------------
+gen_parity_test_:
+    LOAD test_reg           , 05                         ; 00000101
+    TEST test_reg           , 04                         ; Carry = 1, ZERO = 0
+    JUMP gen_all_bits_parity_                            ;
+;--------------------------------------------------------
+gen_all_bits_parity_:
+    TEST s0 , FF ; Include all bit in parity gen
+    JUMP compare_zero_set_;
+;--------------------------------------------------------
+; The COMPARE instruction performs an 8-bit subtraction of two operands but only affects
+; the ZERO and CARRY flags
+;--------------------------------------------------------
+compare_zero_set_:
+    LOAD compare_reg         , 00                        ; Set to 0
+    COMPARE compare_reg      , 00                        ; Set the Zero flag
+    LOAD s0  , s0 ; NOP
+    COMPARE compare_reg      , 01                        ; Set Carry Flag
+    JUMP sl0_                                            ;
+
+; -------------------------------------------------------
+; All shift instructions affect the
+; CARRY and ZERO flags.
+; -------------------------------------------------------
+; The SL0 sX instruction shift the contents of register sX
+; left by one bit position.
+sl0_:
+    LOAD sl0_reg             , FF                          ;
+    SL0 sl0_reg;
+    JUMP sl1_ ;
+;--------------------------------------------------------
+; The SL1 and SR1 shift instructions are similar to SL0 and
+; SR0 except that the empty bit
+; location is filled with a 1
+;--------------------------------------------------------
+sl1_:
+    LOAD sl1_reg             , FF                          ;
+    SL1 sl1_reg;
+    JUMP sr1_ ;
+;--------------------------------------------------------
+sr1_:
+    LOAD    sr1_reg          , 01                          ; Load 1  and shift rign
+    SR1     sr1_reg;
+    JUMP rotate_left_ ;
+;--------------------------------------------------------
+; The rotate instructions, shown in Table 3-5, rotate the
+; contents of the specified register left
+; or right. The RL sX instruction shifts the contents of register sX
+; left with the most-significant bit, bit 7,
+; feeding the least-significant bit, bit 0
+;--------------------------------------------------------
+rotate_left_:
+    LOAD rotate_reg         , FF                            ;
+    RL rotate_reg                                           ; Rotate left
+    JUMP rotate_right_                                      ; rotate
+;--------------------------------------------------------
+rotate_right_:
+    LOAD rotate_reg         , FF                            ;
+    RR rotate_reg                                           ; Rotate Right
+    JUMP init_ ;
+;-------------------------------------------------------
+init_:
+    LOAD ram_address        , ram_locations                 ; Initialize the top ram addr
+    LOAD ram_data           , initial_value                 ; Initialize ram data
+    JUMP loop_                                              ;
+;--------------------------------------------------------
+loop_:
+    LOAD s0                 , s0                            ; NOP
+    SUB ram_address         , 01                            ;
+    STORE ram_address       , (ram_address)                 ;
+    JUMP NZ                 , loop_                         ;
+
+end_:
+    LOAD s0 , s0                                            ; NOP
+    JUMP
+    RETURN

@@ -1,0 +1,40 @@
+;--------------------------------------------------------
+; memory_write_test.psm - meant to exercise the pipeline
+;
+; Author   : Niko Nikolov
+; Modified : 12-2-2022
+;
+; Description :
+; Simple driver
+;
+;-------------------------------------------------------
+; Rename Registers
+; NAMEREG sX, <name>
+;-------------------------------------------------------
+NAMEREG s2, ram_data
+NAMEREG s3, ram_address
+NAMEREG s4, result
+
+; Constnants
+; ------------------------------------------------------
+CONSTANT initial_value  , 00                     ; Initialize to 0
+CONSTANT ram_locations  , 40                     ; There are 64 locationss
+; -------------------------------------------------------
+ADDRESS 000 ; Program always start at reset vector 0
+; -------------------------------------------------------
+
+start:
+    LOAD ram_address    , ram_locations           ; Initialize the top ram addr
+    LOAD ram_data       , initial_value           ; Initialize ram data
+; -------------------------------------------------------
+; Warm up memory before doing any tests
+; -------------------------------------------------------
+ram_fill:
+    SUB ram_address     , 01                      ;
+    LOAD ram_data       , ram_address             ;
+    STORE ram_data      , (ram_address)           ;
+    JUMP NZ             , ram_fill                ;
+; -------------------------------------------------------
+end_program:
+    LOAD sA, sA           ;NOP
+    RETURN
